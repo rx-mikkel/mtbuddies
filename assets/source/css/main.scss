@@ -1,0 +1,16 @@
+/*
+Title:      Screen styles
+Author:     Mikkel Oerum Skovgaard-Petersen
+*/
+
+@import 
+	"_reset.scss",
+    "_defaults.scss",
+    "_layout.scss";
+@import 
+	"components/_tabs",
+	"components/_input",
+	"components/_header",
+	"components/_track",
+	"components/_footer",
+	"components/_validation";

@@ -1,0 +1,15 @@
+﻿$font-stack: 'Roboto', sans-serif;
+$primary-color: #555;
+$background-color: #fff;
+$active-color: #22ACC3;
+$base-margin: 2em;
+$track-color: #34553b;
+
+$base-rounding: 0px;
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}

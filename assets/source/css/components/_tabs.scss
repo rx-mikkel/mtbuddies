@@ -1,0 +1,23 @@
+ul.tabs {
+	margin: 0em;
+	margin-top: $base-margin;
+}
+
+li.tab {
+	display: inline-block;
+	padding: $base-margin/2 $base-margin;
+	@include border-radius($base-rounding);
+
+	a {
+		color: $primary-color;
+	}
+}
+
+li.tab.active {
+	background-color: darken($background-color,5%);
+
+	a {
+		font-weight: bold;
+		text-decoration: none;
+	}
+}
