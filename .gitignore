@@ -1,0 +1,3 @@
+# Ignore Node and Bower modules
+**/node_modules
+**/bower_components
