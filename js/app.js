@@ -38,7 +38,8 @@
 
 		this.ride = {
 						time: presetTime,
-						date: presetDate
+						date: presetDate,
+						participants: []
 					};
 
 		this.addRide = function(track) {
@@ -81,6 +82,9 @@
 		map: "assets/build/images/kongshoej.png",
 		length: 7.5,
 		difficulty: 3,
+		direction: "cw",
+		lat: 57.003186,
+		lon: 9.920193,
 		description: "MTB-ruten i Kongshøj er en begyndervenlig rute som samtidig er attraktiv for mere garvede ryttere, der gerne vil presse sig selv mod uret.",
 		reviews: [],
 		rides: []
@@ -90,6 +94,9 @@
 		map: "assets/build/images/hammer-bakker.png",
 		length: 13,
 		difficulty: 4,
+		direction: "ccw",
+		lat:  57.122455,
+		lon:  10.024561,
 		description: "Sporet Hammer bakker er en tur for de øvede ryttere. Det er en smuk, men hård rute igennem kuperet skov. Der er garanti for sved på panden!",
 		reviews: [],
 		rides: []

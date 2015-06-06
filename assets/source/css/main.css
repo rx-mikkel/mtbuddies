@@ -665,7 +665,7 @@ span {
 }
 
 blockquote {
-  background: #f9f9f9;
+  background: #fafafa;
   border-left: 1em solid #e6e6e6;
   margin: 0.5em 1em;
   padding: 1em;
@@ -797,6 +797,31 @@ placeholder {
   visibility: hidden;
 }
 
+@font-face {
+  font-family: 'icomoon';
+  src: url("../fonts/icomoon.eot?-tausy1");
+  src: url("../fonts/icomoon.eot?#iefix-tausy1") format("embedded-opentype"), url("../fonts/icomoon.ttf?-tausy1") format("truetype"), url("../fonts/icomoon.woff?-tausy1") format("woff"), url("../fonts/icomoon.svg?-tausy1#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  font-family: 'icomoon';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-bike:before {
+  content: "\e600";
+}
+
 ul.tabs {
   margin: 0em;
   margin-top: 2em;
@@ -908,10 +933,65 @@ textarea {
 .map-container {
   max-width: 500px;
   margin: 0px auto;
+  position: relative;
 }
 
 .map-container img {
   width: 100%;
+}
+
+.map-container .direction-left, .map-container .direction-right {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translate(0px, -50%);
+      -ms-transform: translate(0px, -50%);
+          transform: translate(0px, -50%);
+  width: 48px;
+  height: 48px;
+  opacity: .4;
+}
+
+.map-container .direction-left {
+  left: 0px;
+  background-image: url("../images/arrow-left-cw.png");
+}
+
+.map-container .direction-right {
+  right: 0px;
+  background-image: url("../images/arrow-right-cw.png");
+}
+
+.map-container.ccw .direction-left {
+  background-image: url("../images/arrow-left-ccw.png");
+}
+
+.map-container.ccw .direction-right {
+  background-image: url("../images/arrow-right-ccw.png");
+}
+
+@media screen and (max-width: 599px) {
+  .track-presentation .column-left {
+    display: none;
+  }
+  .track-presentation .column {
+    width: 100%;
+  }
+}
+
+.participant {
+  padding: 1em 2em;
+  background-color: #fafafa;
+  display: inline-block;
+}
+
+.participant + .participant {
+  margin-left: 1em;
+}
+
+.participant .icon {
+  font-size: 28px;
+  vertical-align: middle;
+  margin-right: 10px;
 }
 
 .footer {

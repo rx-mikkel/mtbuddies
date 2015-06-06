@@ -55,7 +55,7 @@ span {
 }
 
 blockquote {
-  background: #f9f9f9;
+  background:  darken($background-color,2%);
   border-left: $base-margin/2 solid darken($background-color,10%);
   margin: $base-margin/4 $base-margin/2;
   padding: $base-margin/2;

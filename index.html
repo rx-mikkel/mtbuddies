@@ -3,6 +3,7 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width" />
+        <meta name="description" content="Planlæg din næste mountainbike tur online, og mød nye venner i skoven." />
         <title>Sporet {{location.track.name}}</title>
         <link href="assets/build/css/main.css" rel="stylesheet" type="text/css" />
         <link href='http://fonts.googleapis.com/css?family=Roboto:400,500,700' rel='stylesheet' type='text/css'>
@@ -26,7 +27,9 @@
                     </div>
                 </div>
                 <div class="column column-right">
-                    <div class="map-container">
+                    <div class="map-container {{location.track.direction}}">
+                        <div class="direction-left"></div>
+                        <div class="direction-right"></div>
                         <img ng-src="{{location.track.map}}" />
                     </div>
                 </div>
