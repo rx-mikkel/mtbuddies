@@ -16,6 +16,11 @@
                 <p>Logo, login etc.</p>
             </div>
         </div>
+        <div class="track-info-mobile">
+            <div class="wrap">
+                <h1>{{location.track.name}}</h1>
+            </div>
+        </div>
         <div class="track-presentation">
             <div class="wrap group">
                 <div class="column column-left">
@@ -37,6 +42,11 @@
         </div>
         <div>
             <div class="wrap">
+                <div class="track-info-mobile">
+                    <h2>{{location.track.description}}</h2>
+                    <p>Længde: {{location.track.length}}km</p>
+                    <p>Sværhed: {{location.track.difficulty}} / 10</p>
+                </div>
                 <ul class="tabs">
                     <li class="tab" ng-class="{active:tab.tabSelected('rides')}">
                         <a href ng-click="tab.setTab('rides')">Kommende ture</a>

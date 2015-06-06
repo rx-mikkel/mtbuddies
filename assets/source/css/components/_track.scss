@@ -13,6 +13,10 @@
 	}
 }
 
+.track-info-mobile {
+	display: none;
+}
+
 .column {
 	width: 50%;
 }
@@ -66,7 +70,7 @@
 	}
 }
 
-@media screen and (max-width: 599px) {
+@media screen and (max-width: 619px) {
     .track-presentation {
 
     	.column-left {
@@ -77,4 +81,8 @@
     		width: 100%;
     	}
     }
+
+    .track-info-mobile {
+		display: block;
+	}
 }

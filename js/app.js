@@ -85,7 +85,7 @@
 		direction: "cw",
 		lat: 57.003186,
 		lon: 9.920193,
-		description: "MTB-ruten i Kongshøj er en begyndervenlig rute som samtidig er attraktiv for mere garvede ryttere, der gerne vil presse sig selv mod uret.",
+		description: "MTB-ruten i Kongshøj er en begyndervenlig rute, som samtidig er attraktiv for mere garvede ryttere, der gerne vil presse sig selv mod uret.",
 		reviews: [],
 		rides: []
 	},

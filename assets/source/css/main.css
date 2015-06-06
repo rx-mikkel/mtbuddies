@@ -916,6 +916,10 @@ textarea {
   color: #fff;
 }
 
+.track-info-mobile {
+  display: none;
+}
+
 .column {
   width: 50%;
 }
@@ -969,12 +973,15 @@ textarea {
   background-image: url("../images/arrow-right-ccw.png");
 }
 
-@media screen and (max-width: 599px) {
+@media screen and (max-width: 619px) {
   .track-presentation .column-left {
     display: none;
   }
   .track-presentation .column {
     width: 100%;
+  }
+  .track-info-mobile {
+    display: block;
   }
 }
 
