@@ -645,15 +645,15 @@ p a, p span {
 }
 
 a {
-  color: #22ACC3;
+  color: #14b8b6;
 }
 
 a:visited {
-  color: #2291c3;
+  color: #149fb8;
 }
 
 a:hover {
-  color: #3bc6dd;
+  color: #19e6e4;
 }
 
 img {
@@ -833,15 +833,12 @@ li.tab {
   border-radius: 0px;
 }
 
-li.tab a {
-  color: #555;
-}
-
 li.tab.active {
   background-color: #f2f2f2;
 }
 
 li.tab.active a {
+  color: #555;
   font-weight: bold;
   text-decoration: none;
 }
@@ -855,8 +852,8 @@ li.tab.active a {
 .input-field {
   border: 1px solid #bbbbbb;
   padding: .5em;
-  -webkit-transition: border 0.4s ease;
-          transition: border 0.4s ease;
+  -webkit-transition: border 0.3s ease;
+          transition: border 0.3s ease;
   max-width: 32em;
 }
 
@@ -865,7 +862,7 @@ li.tab.active a {
 }
 
 .input-field:focus {
-  border: 1px solid #22ACC3;
+  border: 1px solid #14b8b6;
 }
 
 .input-field, .button {
@@ -877,18 +874,18 @@ li.tab.active a {
   border: none;
   padding: 0.5em 1em;
   font-weight: 500;
-  -webkit-transition: background 0.4s ease;
-          transition: background 0.4s ease;
+  -webkit-transition: background 0.3s ease;
+          transition: background 0.3s ease;
 }
 
 .standard-button {
-  background-color: #22ACC3;
+  background-color: #14b8b6;
   color: #fff;
-  border: 1px solid #22ACC3;
+  border: 1px solid #14b8b6;
 }
 
 .standard-button:hover {
-  background-color: #30cee8;
+  background-color: #0cf3f0;
 }
 
 textarea {
