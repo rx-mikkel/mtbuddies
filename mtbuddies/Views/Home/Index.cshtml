@@ -1,0 +1,58 @@
+﻿<div class="header">
+    <div class="wrap">
+        <p>Logo, login etc.</p>
+    </div>
+</div>
+<div class="track-info-mobile">
+    <div class="wrap">
+        <h1>{{location.track.name}}</h1>
+    </div>
+</div>
+<div class="track-presentation">
+    <div class="wrap group">
+        <div class="column column-left">
+            <div class="track-info">
+                <h1>{{location.track.name}}</h1>
+                <h2>{{location.track.description}}</h2>
+                <p>Længde: {{location.track.length}}km</p>
+                <p>Sværhed: {{location.track.difficulty}} / 10</p>
+            </div>
+        </div>
+        <div class="column column-right">
+            <div class="map-container {{location.track.direction}}">
+                <div class="direction-left"></div>
+                <div class="direction-right"></div>
+                <img ng-src="{{location.track.map}}" />
+            </div>
+        </div>
+    </div>
+</div>
+<div>
+    <div class="wrap">
+        <div class="track-info-mobile">
+            <h2>{{location.track.description}}</h2>
+            <p>Længde: {{location.track.length}}km</p>
+            <p>Sværhed: {{location.track.difficulty}} / 10</p>
+        </div>
+        <ul class="tabs">
+            <li class="tab" ng-class="{active:tab.tabSelected('rides')}">
+                <a href ng-click="tab.setTab('rides')">Kommende ture</a>
+            </li>
+            <li class="tab" ng-class="{active:tab.tabSelected('reviews')}">
+                <a href ng-click="tab.setTab('reviews')">Anmeldelser</a>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="content">
+    <div class="wrap">
+                
+        <div ng-show="tab.tabSelected('rides')">
+            <track-rides></track-rides>
+        </div>
+        <div ng-show="tab.tabSelected('reviews')">
+            <track-reviews></track-reviews>
+        </div>
+    </div>
+</div>
+        

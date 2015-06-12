@@ -1,0 +1,45 @@
+<h3>Kommende ture i {{location.track.name}}</h3>
+<div ng-hide="location.hasRides()">
+    <blockquote>
+        Der er ingen planlagte ture. Planlæg en herunder
+    </blockquote>
+</div>
+<div class="page-section" ng-repeat="ride in location.track.rides">
+    <p>Tid: {{ride.date|date}}, kl {{ride.time|date:'shortTime'}}</p>
+    <blockquote ng-show="{{ride.body.length}}">{{ride.body}}</blockquote>
+    <p>Deltagere</p>
+    <div class="participant">
+        <p><span class="icon icon-bike"></span>{{ride.author}}</p>
+    </div>
+    <br />
+    <a href>Tilmeld dig</a>
+</div>
+<br />
+<h3>Fortæl hvornår du kører i {{location.track.name}}</h3>
+<form name="rideForm" ng-controller="RideController as rideCtrl" ng-submit="rideForm.$valid && rideCtrl.addRide(location.track)">
+    <div>
+        <div>
+            <div class="input-group">
+                <p>Dato: </p>
+                <input type="date" class="input-field" required ng-model="rideCtrl.ride.date" />
+            </div>
+            <div class="input-group">
+                <p>Tid: </p>
+                <input type="time" class="input-field" required ng-model="rideCtrl.ride.time" />
+            </div>
+        </div>
+        <div>
+            <p>Kommentar: </p>
+            <textarea rows="2" class="input-field" ng-model="rideCtrl.ride.body" placeholder="Kontakt info, begynder/øvet, vi mødes ved... etc."></textarea>
+        </div>
+
+        <div class="input-group">
+            <p>Dit navn:</p>
+            <input type="text" required ng-model="rideCtrl.ride.author" class="input-field">
+        </div>
+        <br />
+        <div class="input-group">
+            <input type="submit" value="Del din tur" class="button standard-button" />
+        </div>
+    </div>
+</form>
