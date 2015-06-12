@@ -5,7 +5,7 @@
     </blockquote>
 </div>
 <div class="page-section" ng-repeat="ride in location.track.rides">
-    <p>Tid: {{ride.date|date}}, kl {{ride.time|date:'shortTime'}}</p>
+    <p>{{ride.date|date}}, kl {{ride.time|date:'shortTime'}}</p>
     <blockquote ng-show="{{ride.body.length}}">{{ride.body}}</blockquote>
     <p>Deltagere</p>
     <div class="participant">
