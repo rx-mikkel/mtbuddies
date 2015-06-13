@@ -5,6 +5,10 @@ VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mtbuddies", "mtbuddies\mtbuddies.csproj", "{B3D27253-8668-451D-BBE4-64E3C809F3E7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mtbuddiesSerivce", "mtbuddiesSerivce\mtbuddiesSerivce.csproj", "{C3ED5A11-F12A-4211-8056-0AF85903A79F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DomainModels", "DomainModels\DomainModels.csproj", "{49B391EF-BC57-42A6-99B8-F5D0BC9EE58E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{B3D27253-8668-451D-BBE4-64E3C809F3E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B3D27253-8668-451D-BBE4-64E3C809F3E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B3D27253-8668-451D-BBE4-64E3C809F3E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3ED5A11-F12A-4211-8056-0AF85903A79F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3ED5A11-F12A-4211-8056-0AF85903A79F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3ED5A11-F12A-4211-8056-0AF85903A79F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3ED5A11-F12A-4211-8056-0AF85903A79F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49B391EF-BC57-42A6-99B8-F5D0BC9EE58E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49B391EF-BC57-42A6-99B8-F5D0BC9EE58E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49B391EF-BC57-42A6-99B8-F5D0BC9EE58E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49B391EF-BC57-42A6-99B8-F5D0BC9EE58E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
