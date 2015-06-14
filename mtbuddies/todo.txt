@@ -1,11 +1,13 @@
-gamification
-twitter/fb ved ny tur
-push beskeder
-analytics
-kort over ruten
-start koordinater og google maps link
-vejr...
-
-
-validering
-billede
+1 - analytics
+1 - start koordinater og google maps link
+1 - oversigtsside, sortering, på sigt et kort. Regioner som underoverskrift
+2 - login, profil side (MEGET simpel)
+2 - twitter ved ny tur
+2 - oprettelsesside til spor (ikke public)
+2 - spor skal have land
+3 - push beskeder (mobil) ved nye deltagere på dine ture
+3 - spor skal udviddes grafisk til at vise hvilken vej der køres
+3 - vejr... afhænger af om der stilles en service til rådighed, men hvis vi kan trække simpel vejrdata og vise et ikon ved datoer...
+3 - gamification (badges der viser hvor mange ture, man har været med på)
+4 - spor skal kunne tage retning "cw" "ccw" "custom tekst"
+4 - instagram feed

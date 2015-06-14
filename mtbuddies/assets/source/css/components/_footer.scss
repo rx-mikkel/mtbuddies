@@ -1,6 +1,6 @@
 .footer {
 	color: darken($background-color,20%);
-	background-color: darken($primary-color,20%);
+	background-color: $color-dark;
 	padding: 4em 0em;
 
 	p {
