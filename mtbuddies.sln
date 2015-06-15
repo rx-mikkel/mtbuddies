@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mtbuddiesSerivce", "mtbuddi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DomainModels", "DomainModels\DomainModels.csproj", "{49B391EF-BC57-42A6-99B8-F5D0BC9EE58E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAO", "DAO\DAO.csproj", "{AC07801C-63BC-4F4D-A407-B478D08BAC1B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{49B391EF-BC57-42A6-99B8-F5D0BC9EE58E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{49B391EF-BC57-42A6-99B8-F5D0BC9EE58E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{49B391EF-BC57-42A6-99B8-F5D0BC9EE58E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC07801C-63BC-4F4D-A407-B478D08BAC1B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC07801C-63BC-4F4D-A407-B478D08BAC1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC07801C-63BC-4F4D-A407-B478D08BAC1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC07801C-63BC-4F4D-A407-B478D08BAC1B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
