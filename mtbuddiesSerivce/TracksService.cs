@@ -8,9 +8,9 @@ namespace mtbuddiesSerivce
 {
     class TracksService : ITracksService
     {
-        public IList<Tracks> GetAllTracks()
+        public IList<Track> GetAllTracks()
         {
-            return new List<Tracks>();
+            return new List<Track>();
         }
     }
 }

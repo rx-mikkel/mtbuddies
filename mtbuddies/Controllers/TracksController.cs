@@ -15,11 +15,17 @@ namespace mtbuddies.Controllers
     {
         private mtbuddiesContext db = new mtbuddiesContext();
 
-        public ActionResult GetAllTrackDetails(long trackId)
-        {
-            Tracks track = db.Tracks.Where(x => x.Id == trackId).SingleOrDefault();
-            
-            return Json(new { trackDetails = track });
+        public ActionResult GetTrackDetails()
+        {           
+            Track track = new Track
+            {
+                Id = 1,
+                Description = "This is a test Track",
+                Difficulty = "4",
+                Name = "Test Track"
+            };
+
+            return Json(track);
         }
     }
 }

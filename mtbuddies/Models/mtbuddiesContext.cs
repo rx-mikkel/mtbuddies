@@ -19,7 +19,7 @@ namespace mtbuddies.Models
         {
         }
 
-        public System.Data.Entity.DbSet<DomainModels.Tracks> Tracks { get; set; }
+        public System.Data.Entity.DbSet<DomainModels.Track> Tracks { get; set; }
     
     }
 }

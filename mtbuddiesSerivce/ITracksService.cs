@@ -8,6 +8,6 @@ namespace mtbuddiesSerivce
 {
     public interface ITracksService
     {
-        IList<Tracks> GetAllTracks();
+        IList<Track> GetAllTracks();
     }
 }
