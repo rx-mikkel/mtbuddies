@@ -11,11 +11,13 @@
 	        mtbTracks.tracks = data;
 	    });*/	    
 
-        $http.post('/Tracks/GetTrackDetails').success(function (data) {                      
-            data.rides = [];
-            data.reviews = [];
+	    $http.post('/Tracks/GetTrackDetails').success(function (data) {            
+            data[0].rides = [];
+            data[0].reviews = [];
 
-            tracks.track = data;
+            tracks.track = data[0];
+
+            console.log(data[0])
 
             tracks.hasRides = function () {
                 return tracks.track.rides.length;
@@ -47,18 +49,18 @@
 		var presetDate = new Date();
 
 		this.ride = {
-						time: presetTime,
-						date: presetDate,
-						participants: []
-					};
+			time: presetTime,
+			date: presetDate,
+			participants: []
+		};
 
 		this.addRide = function(track) {
 			this.ride.createdOn = Date.now();
 			track.rides.push(this.ride);
 			this.ride = {
-						time: presetTime,
-						date: presetDate
-					};
+				time: presetTime,
+				date: presetDate
+			};
 		};
 	});
 

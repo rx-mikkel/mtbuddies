@@ -7,25 +7,19 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using DomainModels;
-using mtbuddies.Models;
+using mtbuddiesSerivce;
 
 namespace mtbuddies.Controllers
 {
     public class TracksController : Controller
     {
-        private mtbuddiesContext db = new mtbuddiesContext();
+        private ITracksService _service = new TracksService();
 
         public ActionResult GetTrackDetails()
         {           
-            Track track = new Track
-            {
-                Id = 1,
-                Description = "This is a test Track",
-                Difficulty = "4",
-                Name = "Test Track"
-            };
+            IList<Track> tracks = _service.GetAllTracks();
 
-            return Json(track);
+            return Json(tracks);
         }
     }
 }
