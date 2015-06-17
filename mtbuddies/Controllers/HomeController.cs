@@ -11,16 +11,6 @@ namespace mtbuddies.Controllers
         public ActionResult Index()
         {
             return View();
-        }
-
-        public ActionResult Rides()
-        {
-            return PartialView();
-        }
-
-        public ActionResult Reviews()
-        {
-            return PartialView();
-        }
+        }        
     }
 }

@@ -75,14 +75,14 @@
 	app.directive('trackRides', function() {
 		return {
 			restrict: 'E',
-			templateUrl: '/Home/Rides'
+			templateUrl: '/SubViews/Rides.html'
 		};
 	});
 
 	app.directive('trackReviews', function() {
 		return {
 			restrict: 'E',
-			templateUrl: '/Home/Reviews'
+			templateUrl: '/SubViews/Reviews.html'
 		};
 	});
 

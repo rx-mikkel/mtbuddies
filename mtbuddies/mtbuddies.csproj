@@ -209,8 +209,7 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Home\Reviews.cshtml" />
-    <Content Include="Views\Home\Rides.cshtml" />
+    <Content Include="SubViews\Reviews.html" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -228,6 +227,9 @@
       <Project>{c3ed5a11-f12a-4211-8056-0af85903a79f}</Project>
       <Name>mtbuddiesSerivce</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SubViews\Rides.html" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
