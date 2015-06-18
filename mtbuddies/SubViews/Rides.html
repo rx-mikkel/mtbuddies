@@ -1,21 +1,21 @@
-<h3>Kommende ture i {{location.track.name}}</h3>
+<h3>Kommende ture i {{location.track.Name}}</h3>
 <div ng-hide="location.hasRides()">
     <blockquote class="text-inactive">
         Der er ingen planlagte ture. Planlæg en herunder
     </blockquote>
 </div>
-<div class="page-section" ng-repeat="ride in location.track.rides">
-    <p>{{ride.date|date}}, kl {{ride.time|date:'shortTime'}}</p>
-    <blockquote ng-show="{{ride.body.length}}">{{ride.body}}</blockquote>
+<div class="page-section" ng-repeat="ride in location.track.Rides">
+    <p>{{ride.Date|date}}, kl {{ride.time|date:'shortTime'}}</p>
+    <blockquote ng-show="{{ride.Comment.length}}">{{ride.Comment}}</blockquote>
     <p>Deltagere</p>
     <div class="participant">
-        <p><span class="icon icon-bike"></span>{{ride.author}}</p>
+        <p><span class="icon icon-bike"></span>{{ride.Author}}</p>
     </div>
     <br />
     <a href>Tilmeld dig</a>
 </div>
 <br />
-<h3>Fortæl hvornår du kører i {{location.track.name}}</h3>
+<h3>Fortæl hvornår du kører i {{location.track.Name}}</h3>
 <form name="rideForm" ng-controller="RideController as rideCtrl" ng-submit="rideForm.$valid && rideCtrl.addRide(location.track)">
     <div>
         <div>

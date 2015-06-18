@@ -11,8 +11,7 @@
 	        mtbTracks.tracks = data;
 	    });*/	    
 
-	    $http.post('/Tracks/GetTrackDetails').success(function (data) {            
-            data[0].rides = [];
+	    $http.post('/Tracks/GetTrackDetails').success(function (data) {
             data[0].reviews = [];
 
             tracks.track = data[0];
@@ -20,7 +19,7 @@
             console.log(data[0])
 
             tracks.hasRides = function () {
-                return tracks.track.rides.length;
+                return tracks.track.Rides.length;
             };
 
             tracks.hasReviews = function () {

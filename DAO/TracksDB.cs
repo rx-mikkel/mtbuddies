@@ -16,7 +16,7 @@ namespace DAO
 
         public IList<Track> GetAllTracks()
         {
-            return _context.Tracks.ToList();
+            return _context.Tracks.Include(x => x.Rides).ToList();
         }
     }
 }

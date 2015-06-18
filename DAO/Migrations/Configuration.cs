@@ -2,6 +2,7 @@ namespace DAO.Migrations
 {
     using DomainModels;
     using System;
+    using System.Collections.Generic;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
@@ -18,6 +19,23 @@ namespace DAO.Migrations
 
             if (!context.Tracks.Any(x => x.Name.Equals("Kongshøj")))
             {
+                Ride ride1 = new Ride() 
+                {
+                    Author = "Peter Thomsen",
+                    Comment = "Dette er en test Ride",
+                    Date = DateTime.Now,                    
+                };
+                Ride ride2 = new Ride() 
+                {
+                    Author = "Johnny Johnson",
+                    Comment = "Dette er også en test Ride",
+                    Date = DateTime.Now,                    
+                };
+
+                IList<Ride> rides = new List<Ride>();
+                rides.Add(ride1);
+                rides.Add(ride2);
+
                 Track track1 = new Track() 
                 {
 	                Name = "Kongshøj",
@@ -27,7 +45,8 @@ namespace DAO.Migrations
 	                Direction = "cw",
 	                Lat = "57.003186",
 	                Lon = "9.920193",
-	                Description = "MTB-ruten i Kongshøj er en begyndervenlig rute, som samtidig er attraktiv for mere garvede ryttere, der gerne vil presse sig selv mod uret."
+	                Description = "MTB-ruten i Kongshøj er en begyndervenlig rute, som samtidig er attraktiv for mere garvede ryttere, der gerne vil presse sig selv mod uret.",
+                    Rides = rides
 	            };
                 Track track2 = new Track()
                 {

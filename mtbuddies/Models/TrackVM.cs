@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
+using System.Web;
 
-namespace DomainModels
+namespace mtbuddies.Models
 {
-    public class Track
+    public class TrackVM
     {
         public long Id { get; set; }
         public string Name { get; set; }
@@ -16,6 +16,6 @@ namespace DomainModels
         public string Lon { get; set; }
         public string Description { get; set; }
         public string Direction { get; set; }
-        public ICollection<Ride> Rides { get; set; }
+        public IList<RideVM> Rides { get; set; } 
     }
 }
