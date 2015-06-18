@@ -1,29 +1,41 @@
-(function(){
+(function () {    
 	var app = angular.module('mtBuddies', []);
 
-	app.controller('TrackController', ['$http', function($http) {
-		/*var mtbTracks = this;
+	app.controller('TrackController', ['$http', function ($http) {
+	    tracks = this;
+
+	    /*var mtbTracks = this;
 		mtbTracks.tracks = [ ];
 		
 		$http.get('js/tracks.json').success(function(data) {
 	        mtbTracks.tracks = data;
-	    });*/
+	    });*/	    
 
-	    this.track = tracks[0];
+	    $http.post('/Tracks/GetTrackDetails').success(function (data) {            
+            data[0].rides = [];
+            data[0].reviews = [];
 
-		this.hasRides = function() {
-			return this.track.rides.length;
-		};
+            tracks.track = data[0];
 
-		this.hasReviews = function() {
-			return this.track.reviews.length;
-		};
+            console.log(data[0])
+
+            tracks.hasRides = function () {
+                return tracks.track.rides.length;
+            };
+
+            tracks.hasReviews = function () {
+                return tracks.track.reviews.length;
+            };
+
+        }).error(function () {
+            //TODO Handle errors
+        });        
 	}]);
 
-	app.controller('TabController', function(){
+	app.controller('TabController', function () {
 		this.tab = "rides";
 
-		this.setTab = function(activeTab) {
+		this.setTab = function (activeTab) {
 			this.tab = activeTab;
 		};
 
@@ -37,18 +49,18 @@
 		var presetDate = new Date();
 
 		this.ride = {
-						time: presetTime,
-						date: presetDate,
-						participants: []
-					};
+			time: presetTime,
+			date: presetDate,
+			participants: []
+		};
 
 		this.addRide = function(track) {
 			this.ride.createdOn = Date.now();
 			track.rides.push(this.ride);
 			this.ride = {
-						time: presetTime,
-						date: presetDate
-					};
+				time: presetTime,
+				date: presetDate
+			};
 		};
 	});
 
@@ -65,40 +77,40 @@
 	app.directive('trackRides', function() {
 		return {
 			restrict: 'E',
-			templateUrl: '/Home/Rides'
+			templateUrl: '/SubViews/Rides.html'
 		};
 	});
 
 	app.directive('trackReviews', function() {
 		return {
 			restrict: 'E',
-			templateUrl: '/Home/Reviews'
+			templateUrl: '/SubViews/Reviews.html'
 		};
 	});
 
 	var tracks = [
 	{
-		name: 'Kongshøj',
-		map: "/Content/images/kongshoej.png",
-		length: 7.5,
-		difficulty: 3,
-		direction: "cw",
-		lat: 57.003186,
-		lon: 9.920193,
-		description: "MTB-ruten i Kongshøj er en begyndervenlig rute, som samtidig er attraktiv for mere garvede ryttere, der gerne vil presse sig selv mod uret.",
-		reviews: [],
-		rides: []
+	    name: 'Kongshøj',
+	    map: "/Content/images/kongshoej.png",
+	    length: 7.5,
+	    difficulty: 3,
+	    direction: "cw",
+	    lat: 57.003186,
+	    lon: 9.920193,
+	    description: "MTB-ruten i Kongshøj er en begyndervenlig rute, som samtidig er attraktiv for mere garvede ryttere, der gerne vil presse sig selv mod uret.",
+	    reviews: [],
+	    rides: []
 	},
 	{
-		name: 'Hammer bakker',
-		map: "/Content/images/hammer-bakker.png",
-		length: 13,
-		difficulty: 4,
-		direction: "ccw",
-		lat:  57.122455,
-		lon:  10.024561,
-		description: "Sporet Hammer bakker er en tur for de øvede ryttere. Det er en smuk, men hård rute igennem kuperet skov. Der er garanti for sved på panden!",
-		reviews: [],
-		rides: []
-	}]
+	    name: 'Hammer bakker',
+	    map: "/Content/images/hammer-bakker.png",
+	    length: 13,
+	    difficulty: 4,
+	    direction: "ccw",
+	    lat: 57.122455,
+	    lon: 10.024561,
+	    description: "Sporet Hammer bakker er en tur for de øvede ryttere. Det er en smuk, men hård rute igennem kuperet skov. Der er garanti for sved på panden!",
+	    reviews: [],
+	    rides: []
+	}];
 })();

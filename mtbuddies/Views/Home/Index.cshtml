@@ -5,24 +5,24 @@
 </div>
 <div class="track-info-mobile">
     <div class="wrap">
-        <h1>{{location.track.name}}</h1>
+        <h1>{{location.track.Name}}</h1>
     </div>
 </div>
 <div class="track-presentation">
     <div class="wrap group">
         <div class="column column-left">
             <div class="track-info">
-                <h1>{{location.track.name}}</h1>
-                <h2>{{location.track.description}}</h2>
-                <p>Længde: {{location.track.length}}km</p>
-                <p>Sværhed: {{location.track.difficulty}} / 10</p>
+                <h1>{{location.track.Name}}</h1>
+                <h2>{{location.track.Description}}</h2>
+                <p>Længde: {{location.track.Length}}km</p>
+                <p>Sværhed: {{location.track.Difficulty}} / 10</p>
             </div>
         </div>
         <div class="column column-right">
-            <div class="map-container {{location.track.direction}}">
+            <div class="map-container {{location.track.Direction}}">
                 <div class="direction-left"></div>
                 <div class="direction-right"></div>
-                <img ng-src="{{location.track.map}}" />
+                <img ng-src="{{location.track.Map}}" />
             </div>
         </div>
     </div>
@@ -30,9 +30,9 @@
 <div>
     <div class="wrap">
         <div class="track-info-mobile">
-            <h2>{{location.track.description}}</h2>
-            <p>Længde: {{location.track.length}}km</p>
-            <p>Sværhed: {{location.track.difficulty}} / 10</p>
+            <h2>{{location.track.Description}}</h2>
+            <p>Længde: {{location.track.Length}}km</p>
+            <p>Sværhed: {{location.track.Difficulty}} / 10</p>
         </div>
         <ul class="tabs">
             <li class="tab" ng-class="{active:tab.tabSelected('rides')}">
