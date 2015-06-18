@@ -1,0 +1,59 @@
+
+h1 {
+  font-size: 3em;
+  margin: .5em 0em;
+}
+
+h2 {
+  font-size: 2em;
+  font-weight: 400;
+  margin: 1em 0em;
+  line-height: 1.5em;
+}
+
+h3 {
+  font-size: 1.8em;
+  margin: 1em 0em;
+  font-weight: 500;
+}
+
+p, a {
+  font-size: 1.6em;
+  line-height: 1.6em;
+  margin: 0em; }
+
+p a, p span {
+  font-size: 1em; }
+
+a {
+  color: $active-color;
+}
+
+a:visited {
+  color: adjust-hue($active-color, 10deg); 
+}
+
+a:hover {
+  color: lighten($active-color, 10%); 
+}
+
+span {
+  font-size: 1.6em;
+}
+
+.text-inactive {
+  color: darken($background-color,40%);
+}
+
+/* common */
+.bold {
+  font-weight: bold; }
+
+  ::-webkit-input-placeholder {
+  color: #bbb; }
+
+:-moz-placeholder {
+  color: #bbb; }
+
+placeholder {
+  color: #bbb; }
