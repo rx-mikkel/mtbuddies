@@ -7,9 +7,19 @@ namespace mtbuddies.Models
 {
     public class RideVM
     {
-        public long Id { get; set; }
-        public DateTime Date { get; set; }
-        public String Author { get; set; }
-        public String Comment { get; set; }        
+        public long Id { get; private set; }
+        public String Date { get; private set; }
+        public String Time { get; private set; }
+        public String Author { get; private set; }
+        public String Comment { get; private set; }
+
+        public RideVM(DomainModels.Ride ride)
+        {
+            this.Id = ride.Id;
+            this.Author = ride.Author;
+            this.Comment = ride.Comment;
+            this.Date = ride.Date.ToShortDateString();
+            this.Time = ride.Date.ToShortTimeString();
+        }
     }
 }
