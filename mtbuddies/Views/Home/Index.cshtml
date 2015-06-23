@@ -3,11 +3,6 @@
         <p>Logo, login etc.</p>
     </div>
 </div>
-<div class="track-info-mobile">
-    <div class="wrap">
-        <h1>{{location.track.Name}}</h1>
-    </div>
-</div>
 <div class="track-presentation">
     <div class="wrap group">
         <div class="column column-left">
@@ -20,6 +15,9 @@
         </div>
         <div class="column column-right">
             <div class="map-container {{location.track.Direction}}">
+                <div class="track-info-short">
+                    <h1>{{location.track.Name}}</h1>
+                </div>
                 <div class="direction-left"></div>
                 <div class="direction-right"></div>
                 <img ng-src="{{location.track.Map}}" />

@@ -2,6 +2,10 @@
 	background-color: $track-color;
 	background-image: url('../images/track-bg.png');
 	padding: 2em 0px;
+
+	.track-info-short {
+		display: none;
+	}
 }
 
 .track-info {
@@ -10,6 +14,17 @@
 
 	h1, h2, p {
 		color: $background-color;
+	}
+}
+
+.track-info-short {
+	background-color: rgba(0,0,0,.25);
+	padding: 1em 2em;
+	position: absolute;
+
+	h1 {
+		color: $background-color;
+		margin: 0px;
 	}
 }
 
@@ -35,6 +50,7 @@
 	max-width: 500px;
 	margin: 0px auto;
 	position: relative;
+	text-align: center;
 
 	img {
 		width: 100%;
@@ -79,6 +95,10 @@
 
     	.column {
     		width: 100%;
+    	}
+
+    	.track-info-short {
+    		display: block;
     	}
     }
 

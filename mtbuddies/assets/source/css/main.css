@@ -897,7 +897,7 @@ textarea {
 }
 
 .header {
-  background-color: #04312f;
+  background-color: #012e2c;
   color: #fff;
   padding: 2em;
 }
@@ -908,6 +908,10 @@ textarea {
   padding: 2em 0px;
 }
 
+.track-presentation .track-info-short {
+  display: none;
+}
+
 .track-info {
   background-color: rgba(0, 0, 0, 0.25);
   padding: 2em;
@@ -915,6 +919,17 @@ textarea {
 
 .track-info h1, .track-info h2, .track-info p {
   color: #fff;
+}
+
+.track-info-short {
+  background-color: rgba(0, 0, 0, 0.25);
+  padding: 1em 2em;
+  position: absolute;
+}
+
+.track-info-short h1 {
+  color: #fff;
+  margin: 0px;
 }
 
 .track-info-mobile {
@@ -939,6 +954,7 @@ textarea {
   max-width: 500px;
   margin: 0px auto;
   position: relative;
+  text-align: center;
 }
 
 .map-container img {
@@ -981,6 +997,9 @@ textarea {
   .track-presentation .column {
     width: 100%;
   }
+  .track-presentation .track-info-short {
+    display: block;
+  }
   .track-info-mobile {
     display: block;
   }
@@ -1005,7 +1024,7 @@ textarea {
 
 .footer {
   color: #cccccc;
-  background-color: #04312f;
+  background-color: #012e2c;
   padding: 4em 0em;
 }
 
