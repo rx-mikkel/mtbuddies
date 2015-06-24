@@ -63,6 +63,16 @@
 		};
 	});
 
+	app.controller('SignupController', function () {
+	    this.participant = {};
+
+	    this.addParticipant = function (ride) {
+	        this.participant.createdOn = Date.now();
+	        ride.participants.push(this.participant);
+	        this.participant = {};
+	    };
+	});
+
 	app.controller('ReviewController', function() {
 		this.review = {};
 
@@ -86,7 +96,7 @@
 			templateUrl: '/SubViews/Reviews.html'
 		};
 	});
-
+    /*
 	var tracks = [
 	{
 	    name: 'Kongshøj',
@@ -112,4 +122,5 @@
 	    reviews: [],
 	    rides: []
 	}];
+    */
 })();

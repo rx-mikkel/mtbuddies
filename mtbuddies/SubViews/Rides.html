@@ -13,7 +13,14 @@
         <p><span class="icon icon-bike"></span>{{ride.Author}}</p>
     </div>
     <br />
-    <a href>Tilmeld dig</a>
+    <a href ng-hide="showSignUp" ng-click="showSignUp = !showSignUp">Tilmeld dig</a>
+    <form name="participantForm" ng-show="showSignUp" ng-controller="SignupController as signupCtrl" ng-submit="participantForm.$valid && signupCtrl.addParticipant(location.track.ride)">
+        <div>
+            <p>Dit navn: </p>
+            <input type="text" class="input-field" required ng-model="signupCtrl.participant.name" />
+            <input type="submit" class="button standard-button" value="Tag med" />
+        </div>
+    </form>
 </div>
 <br />
 <h3>Fortæl hvornår du kører i {{location.track.Name}}</h3>
