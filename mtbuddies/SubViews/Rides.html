@@ -12,9 +12,12 @@
     <div class="participant">
         <p><span class="icon icon-bike"></span>{{ride.Author}}</p>
     </div>
+    <div class="participant" ng-repeat="participant in ride.participants">
+        <p><span class="icon icon-bike"></span>{{participant.name}}</p>
+    </div>
     <br />
     <a href ng-hide="showSignUp" ng-click="showSignUp = !showSignUp">Tilmeld dig</a>
-    <form name="participantForm" ng-show="showSignUp" ng-controller="SignupController as signupCtrl" ng-submit="participantForm.$valid && signupCtrl.addParticipant(location.track.ride)">
+    <form name="participantForm" ng-show="showSignUp" ng-controller="SignupController as signupCtrl" ng-submit="participantForm.$valid && signupCtrl.addParticipant({ride})">
         <div>
             <p>Dit navn: </p>
             <input type="text" class="input-field" required ng-model="signupCtrl.participant.name" />
