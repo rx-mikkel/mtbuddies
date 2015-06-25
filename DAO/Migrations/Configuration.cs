@@ -14,7 +14,7 @@ namespace DAO.Migrations
             AutomaticMigrationsEnabled = true;
         }
 
-        protected override void Seed(DAO.MTBuddiesContext context)
+        protected override void Seed(MTBuddiesContext context)
         {
 
             if (!context.Tracks.Any(x => x.Name.Equals("Kongshøj")))
@@ -64,7 +64,7 @@ namespace DAO.Migrations
                 context.Tracks.Add(track2);
 
                 context.SaveChanges();
-            }            
+            }
         }
     }
 }

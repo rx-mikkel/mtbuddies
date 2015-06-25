@@ -42,8 +42,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IRideService.cs" />
     <Compile Include="ITracksService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RideService.cs" />
     <Compile Include="TracksService.cs" />
   </ItemGroup>
   <ItemGroup>

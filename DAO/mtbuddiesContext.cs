@@ -7,6 +7,7 @@ namespace DAO
     {           
         public virtual DbSet<Track> Tracks { get; set; }
         public virtual DbSet<Ride> Rides { get; set; }
+        public virtual DbSet<Participant> Participants { get; set; }
 
         public MTBuddiesContext()
         {
