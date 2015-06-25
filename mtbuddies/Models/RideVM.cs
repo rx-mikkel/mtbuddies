@@ -12,6 +12,7 @@ namespace mtbuddies.Models
         public String Time { get; private set; }
         public String Author { get; private set; }
         public String Comment { get; private set; }
+        public IList<String> Participant { get; private set; }
 
         public RideVM(DomainModels.Ride ride)
         {

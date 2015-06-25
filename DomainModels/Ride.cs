@@ -12,5 +12,6 @@ namespace DomainModels
         public String Author { get; set; }
         public String Comment { get; set; }
         public Track Track { get; set; }
+        public IList<Participant> Participants { get; set; }
     }
 }
