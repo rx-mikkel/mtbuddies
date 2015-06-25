@@ -1,5 +1,19 @@
 .header { 
 	background-color: $color-dark;
 	color: $background-color;
-	padding: 2em;
+	padding: 1em;
+
+	.logo {
+		img {
+			height: 64px;
+			vertical-align: top;
+		}
+		p {
+			display: inline-block;
+			font-weight: 300;
+			font-size: 32px;
+			line-height: 64px;
+			margin-left: .5em;
+		}
+	}
 }
