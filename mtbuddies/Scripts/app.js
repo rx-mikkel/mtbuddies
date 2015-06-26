@@ -47,6 +47,8 @@
 		var presetTime = new Date(2015, 0, 1, 10, 0, 0);
 		var presetDate = new Date();
 
+		this.date = presetDate;
+
 		this.ride = {
 			time: presetTime,
 			date: presetDate,

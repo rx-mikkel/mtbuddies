@@ -171,6 +171,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\css\main.css" />
+    <Content Include="Content\fonts\icomoon.svg" />
     <Content Include="Content\images\18kyc1vh3w87hjpg.jpg" />
     <Content Include="Content\images\arrow-left-ccw.png" />
     <Content Include="Content\images\arrow-left-cw.png" />
@@ -178,6 +179,7 @@
     <Content Include="Content\images\arrow-right-cw.png" />
     <Content Include="Content\images\kongshoej.jpg" />
     <Content Include="Content\images\kongshoej.png" />
+    <Content Include="Content\images\logo.svg" />
     <Content Include="Content\images\track-bg.png" />
     <Content Include="Content\images\track_bg.png" />
     <Content Include="favicon.ico" />
@@ -233,6 +235,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="SubViews\Rides.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\fonts\icomoon.eot" />
+    <Content Include="Content\fonts\icomoon.ttf" />
+    <Content Include="Content\fonts\icomoon.woff" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

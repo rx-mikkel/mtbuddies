@@ -1,9 +1,35 @@
 .footer {
 	color: darken($background-color,20%);
 	background-color: $color-dark;
-	padding: 4em 0em;
+	padding: 2em 0em;
 
 	p {
 		font-size: 1.4em;
+		font-weight: 300;
+	}
+
+	a {
+		color: darken($background-color,20%);
+		text-decoration: none;
+		border-bottom: 1px dotted transparent;
+
+		&:hover {
+			color: $background-color;
+			border-bottom: 1px dotted darken($background-color,20%);
+		}
+	}
+
+	.logo {
+		img {
+			height: 48px;
+			vertical-align: top;
+		}
+		p {
+			display: inline-block;
+			font-weight: 300;
+			font-size: 28px;
+			line-height: 48px;
+			margin-left: .5em;
+		}
 	}
 }
