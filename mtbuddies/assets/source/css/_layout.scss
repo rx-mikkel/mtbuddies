@@ -15,18 +15,15 @@ img {
 
 blockquote {
   background:  darken($background-color,2%);
-  border-left: $base-margin/2 solid darken($background-color,10%);
+  border-left: $base-margin/2 solid darken($background-color,15%);
   margin: $base-margin/4 $base-margin/2;
   padding: $base-margin/2;
   font-size: 1.6em;
 }
 
 .page-section {
-  padding: $base-margin/2 0em;
-
-  + .page-section {
-    border-top: 1px solid lighten($primary-color,50%);
-  }
+  padding: $base-margin $base-margin/2;
+  border-bottom: 1px dashed lighten($primary-color,20%);
 }
 
 .pull-right {
@@ -42,79 +39,14 @@ blockquote {
 
 .content {
   padding: 2em 0em;
-  background-color: darken($background-color,5%);
+  background-color: darken($background-color,8%);
 }
 
 
 /* ==========================================================================
    Helper classes
    ========================================================================== */
-/*
- * Image replacement
- */
-.ir {
-  background-color: transparent;
-  border: 0;
-  overflow: hidden;
-  /* IE 6/7 fallback */
-  *text-indent: -9999px; }
 
-.ir:before {
-  content: "";
-  display: block;
-  width: 0;
-  height: 100%; }
-
-/*
- * Hide from both screenreaders and browsers: h5bp.com/u
- */
-.hidden {
-  display: none !important;
-  visibility: hidden; }
-
-/*
- * Hide only visually, but have it available for screenreaders: h5bp.com/v
- */
-.visuallyhidden {
-  border: 0;
-  clip: rect(0 0 0 0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px; }
-
-/*
- * Extends the .visuallyhidden class to allow the element to be focusable
- * when navigated to via the keyboard: h5bp.com/p
- */
-.visuallyhidden.focusable:active,
-.visuallyhidden.focusable:focus {
-  clip: auto;
-  height: auto;
-  margin: 0;
-  overflow: visible;
-  position: static;
-  width: auto; }
-
-/*
- * Hide visually and from screenreaders, but maintain layout
- */
-.invisible {
-  visibility: hidden; }
-
-/*
- * Clearfix: contain floats
- *
- * For modern browsers
- * 1. The space content is one way to avoid an Opera bug when the
- *    `contenteditable` attribute is included anywhere else in the document.
- *    Otherwise it causes space to appear at the top and bottom of elements
- *    that receive the `clearfix` class.
- * 2. The use of `table` rather than `block` is only necessary if using
- *    `:before` to contain the top-margins of child elements.
- */
 .group:after {
   content: ".";
   display: block;

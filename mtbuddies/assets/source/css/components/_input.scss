@@ -37,7 +37,7 @@
 	border: 1px solid $active-color;
 
 	&:hover {
-		background-color: saturate(lighten($active-color,10%),10%);
+		background-color: saturate(lighten($active-color,5%),20%);
 	}
 }
 
