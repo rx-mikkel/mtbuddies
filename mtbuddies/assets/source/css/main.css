@@ -744,7 +744,7 @@ a {
 }
 
 a:visited {
-  color: #149fb8;
+  color: #14acb8;
 }
 
 a:hover {
@@ -906,31 +906,28 @@ textarea {
 
 .map-container .direction-left, .map-container .direction-right {
   position: absolute;
-  top: 50%;
-  -webkit-transform: translate(0px, -50%);
-      -ms-transform: translate(0px, -50%);
-          transform: translate(0px, -50%);
+  top: 0px;
+  left: 0px;
   width: 48px;
   height: 48px;
-  opacity: .4;
+  opacity: .6;
 }
 
 .map-container .direction-left {
-  left: 0px;
-  background-image: url("../images/arrow-left-cw.png");
-}
-
-.map-container .direction-right {
-  right: 0px;
   background-image: url("../images/arrow-right-cw.png");
 }
 
-.map-container.ccw .direction-left {
+.map-container .direction-right {
   background-image: url("../images/arrow-left-ccw.png");
+  display: none;
+}
+
+.map-container.ccw .direction-left {
+  display: none;
 }
 
 .map-container.ccw .direction-right {
-  background-image: url("../images/arrow-right-ccw.png");
+  display: block;
 }
 
 @media screen and (max-width: 619px) {
@@ -968,7 +965,7 @@ textarea {
 .footer {
   color: #cccccc;
   background-color: #012e2c;
-  padding: 2em 0em;
+  padding: 4em 0em;
 }
 
 .footer p {
@@ -977,19 +974,13 @@ textarea {
 }
 
 .footer a {
-  color: #cccccc;
-  text-decoration: none;
-  border-bottom: 1px dotted transparent;
-}
-
-.footer a:hover {
-  color: #fff;
-  border-bottom: 1px dotted #cccccc;
+  opacity: .8;
 }
 
 .footer .logo img {
   height: 48px;
   vertical-align: top;
+  margin-bottom: 1em;
 }
 
 .footer .logo p {

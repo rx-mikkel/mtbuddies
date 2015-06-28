@@ -58,30 +58,29 @@
 
 	.direction-left, .direction-right {
 		position: absolute;
-		top: 50%;
-		transform: translate(0px, -50%);
+		top: 0px;
+		left: 0px;
 		width: 48px;
 		height: 48px;
-		opacity: .4;
+		opacity: .6;
 	}
 
 	.direction-left {
-		left: 0px;
-		background-image: url('../images/arrow-left-cw.png');
+		background-image: url('../images/arrow-right-cw.png');
 	}
 
 	.direction-right {
-		right: 0px;
-		background-image: url('../images/arrow-right-cw.png');
+		background-image: url('../images/arrow-left-ccw.png');
+		display: none;
 	}
 
 	&.ccw {
 		.direction-left {
-			background-image: url('../images/arrow-left-ccw.png');
+			display: none;
 		}
 
 		.direction-right {
-			background-image: url('../images/arrow-right-ccw.png');
+			display: block;
 		}
 	}
 }

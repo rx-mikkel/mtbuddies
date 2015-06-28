@@ -32,7 +32,7 @@ a {
   color: $active-color;
 
   &:visited {
-    color: adjust-hue($active-color, 10deg); 
+    color: adjust-hue($active-color, 5deg); 
   }
 
   &:hover {
