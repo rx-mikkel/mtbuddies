@@ -1,5 +1,5 @@
 ul.tabs {
-	margin: 0em;
+	margin: 0em $spacing/2;
 	margin-top: $base-margin;
 }
 
@@ -10,7 +10,7 @@ li.tab {
 }
 
 li.tab.active {
-	background-color: darken($background-color,8%);
+	background-color: darken($background-color,12%);
 
 	a {
 		color: $primary-color;

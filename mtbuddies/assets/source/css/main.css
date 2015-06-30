@@ -621,16 +621,66 @@ img {
 }
 
 blockquote {
-  background: #fafafa;
-  border-left: 1em solid #d9d9d9;
-  margin: 0.5em 1em;
+  background: #f7f7f7;
+  border-left: 0.5em solid #d9d9d9;
+  margin: 0px;
   padding: 1em;
   font-size: 1.6em;
+}
+
+blockquote:nth-child(odd) {
+  background: #fff;
 }
 
 .page-section {
   padding: 2em 1em;
   border-bottom: 1px dashed #888888;
+}
+
+.page-card-wide {
+  background-color: #fff;
+  padding: 2em;
+  margin: 1em;
+}
+
+.page-card-wide h3 {
+  margin: 0px;
+}
+
+.page-card-wide p .icon {
+  font-size: 28px;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+.page-card {
+  float: left;
+  width: 50%;
+  padding: 1em;
+}
+
+.page-card .column {
+  padding: 0px;
+}
+
+.page-card .card-inner {
+  background-color: #fff;
+  padding: 1em 2em;
+}
+
+.page-card .card-inner .card-section {
+  padding: 1em 0px;
+  border-bottom: 1px dotted #d9d9d9;
+}
+
+.page-card .card-inner .card-section.last {
+  border-bottom: none;
+}
+
+.page-card .card-inner p .icon {
+  font-size: 28px;
+  vertical-align: middle;
+  margin-right: 5px;
 }
 
 .pull-right {
@@ -646,8 +696,14 @@ blockquote {
 }
 
 .content {
-  padding: 2em 0em;
-  background-color: #ebebeb;
+  padding: 1em 0px;
+  background-color: #e0e0e0;
+}
+
+@media screen and (max-width: 619px) {
+  .page-card {
+    width: 100%;
+  }
 }
 
 /* ==========================================================================
@@ -687,7 +743,7 @@ blockquote {
 }
 
 ul.tabs {
-  margin: 0em;
+  margin: 0em 1em;
   margin-top: 2em;
 }
 
@@ -698,7 +754,7 @@ li.tab {
 }
 
 li.tab.active {
-  background-color: #ebebeb;
+  background-color: #e0e0e0;
 }
 
 li.tab.active a {
@@ -877,19 +933,20 @@ textarea {
 
 .track-info-mobile {
   display: none;
+  padding: 0px 1em;
 }
 
 .column {
   width: 50%;
-}
-
-.column-left {
-  padding-right: 1em;
+  padding: 0px 1em;
   float: left;
 }
 
+.column .column {
+  padding: 0px;
+}
+
 .column-right {
-  padding-left: 1em;
   float: right;
 }
 
@@ -907,7 +964,7 @@ textarea {
 .map-container .direction-left, .map-container .direction-right {
   position: absolute;
   top: 0px;
-  left: 0px;
+  right: 0px;
   width: 48px;
   height: 48px;
   opacity: .6;
@@ -940,6 +997,9 @@ textarea {
   .track-presentation .track-info-short {
     display: block;
   }
+  .column {
+    width: 100%;
+  }
   .track-info-mobile {
     display: block;
   }
@@ -954,12 +1014,6 @@ textarea {
 
 .participant + .participant {
   margin-left: 1em;
-}
-
-.participant .icon {
-  font-size: 28px;
-  vertical-align: middle;
-  margin-right: 10px;
 }
 
 .footer {
@@ -989,6 +1043,12 @@ textarea {
   font-size: 28px;
   line-height: 48px;
   margin-left: .5em;
+}
+
+@media screen and (max-width: 619px) {
+  .footer .logo {
+    margin-top: 2em;
+  }
 }
 
 /*

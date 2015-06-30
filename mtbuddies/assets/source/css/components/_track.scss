@@ -30,19 +30,20 @@
 
 .track-info-mobile {
 	display: none;
+	padding: 0px $spacing/2;
 }
 
 .column {
 	width: 50%;
-}
-
-.column-left {
-	padding-right: 1em;
+	padding: 0px $spacing/2;
 	float: left;
+
+	.column {
+		padding: 0px;
+	}
 }
 
 .column-right {
-	padding-left: 1em;
 	float: right;
 }
 
@@ -59,7 +60,7 @@
 	.direction-left, .direction-right {
 		position: absolute;
 		top: 0px;
-		left: 0px;
+		right: 0px;
 		width: 48px;
 		height: 48px;
 		opacity: .6;
@@ -99,6 +100,10 @@
     	.track-info-short {
     		display: block;
     	}
+    }
+
+    .column {
+    	width: 100%;
     }
 
     .track-info-mobile {

@@ -8,22 +8,75 @@ body {
   background-color: $background-color;
   font-family: $font-stack; }
 
-
 img {
   max-width: 100%;
 }
 
 blockquote {
-  background:  darken($background-color,2%);
-  border-left: $base-margin/2 solid darken($background-color,15%);
-  margin: $base-margin/4 $base-margin/2;
+  background:  darken($background-color,3%);
+  border-left: $spacing/4 solid darken($background-color,15%);
+  margin: 0px;
   padding: $base-margin/2;
   font-size: 1.6em;
+
+  &:nth-child(odd) {
+    background: $background-color;
+  }
 }
 
 .page-section {
   padding: $base-margin $base-margin/2;
   border-bottom: 1px dashed lighten($primary-color,20%);
+}
+
+.page-card-wide {
+  background-color: $background-color;
+  padding: $spacing;
+  margin: $spacing/2;
+
+  h3 {
+    margin: 0px;
+  }
+
+  p {
+    .icon {
+      font-size: 28px;
+      vertical-align: middle;
+      margin-right: 5px;
+    }
+  }
+}
+
+.page-card {
+  float: left;
+  width: 50%;
+  padding: $spacing/2;
+
+  .column {
+    padding: 0px;
+  }
+
+  .card-inner {
+    background-color: $background-color;
+    padding: $spacing/2 $spacing;
+
+    .card-section {
+      padding: $spacing/2 0px;
+      border-bottom: 1px dotted darken($background-color,15%);
+
+      &.last {
+        border-bottom: none;
+      }
+    }
+
+    p {
+      .icon {
+        font-size: 28px;
+        vertical-align: middle;
+        margin-right: 5px;
+      }
+    }
+  }
 }
 
 .pull-right {
@@ -38,8 +91,14 @@ blockquote {
   max-width: 120em; }
 
 .content {
-  padding: 2em 0em;
-  background-color: darken($background-color,8%);
+  padding: $spacing/2 0px;
+  background-color: darken($background-color,12%);
+}
+
+@media screen and (max-width: 619px) {
+  .page-card {
+    width: 100%;
+  }
 }
 
 

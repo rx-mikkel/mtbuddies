@@ -1,54 +1,69 @@
-<div ng-hide="location.hasRides()">
-    <blockquote class="text-inactive">
-        Der er ingen planlagte ture. Planlæg en herunder
-    </blockquote>
+<div class="group">
+    <div ng-hide="location.hasRides()">
+        <blockquote class="text-inactive">
+            Der er ingen planlagte ture. Planlæg en herunder
+        </blockquote>
+    </div>
+    <div class="page-card" ng-repeat="ride in location.track.Rides">
+        <div class="card-inner">
+            <div class="card-section group">
+                <div class="column">
+                    <p><span class="icon icon-bike"></span> {{ride.Date|date}}</p>
+                </div>
+                <div class="column">
+                    <p><span class="icon icon-bike"></span> {{ride.Time}}</p>
+                </div>
+            </div>
+            <div class="card-section">
+                <p><span class="icon icon-bike"></span> Kommentarer</p>
+                <blockquote ng-show="{{ride.Comment.length}}">{{ride.Comment}}</blockquote>
+            </div>
+            <div class="card-section last">
+                <p><span class="icon icon-bike"></span> Deltagere</p>
+                <div class="participant">
+                    <p>{{ride.Author}}</p>
+                </div>
+                <div class="participant" ng-repeat="participant in ride.participants">
+                    <p>{{participant.name}}</p>
+                </div>
+                <br />
+                <a href ng-hide="showSignUp" ng-click="showSignUp = !showSignUp">Tilmeld dig</a>
+                <form name="participantForm" ng-show="showSignUp" ng-controller="SignupController as signupCtrl" ng-submit="participantForm.$valid && signupCtrl.addParticipant(this.$parent.ride)">
+                    <div>
+                        <p>Dit navn: </p>
+                        <input type="text" class="input-field" required ng-model="signupCtrl.participant.name" />
+                        <input type="submit" class="button standard-button" value="Tag med" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 </div>
-<div class="page-section" ng-repeat="ride in location.track.Rides">
-    <!--<p>{{ride.Date|date}}, kl {{ride.Time|date:'shortTime'}}</p>-->
-    <p>{{ride.Date|date}}, kl {{ride.Time}}</p>
-    <blockquote ng-show="{{ride.Comment.length}}">{{ride.Comment}}</blockquote>
-    <p>Deltagere</p>
-    <div class="participant">
-        <p><span class="icon icon-bike"></span>{{ride.Author}}</p>
-    </div>
-    <div class="participant" ng-repeat="participant in ride.participants">
-        <p><span class="icon icon-bike"></span>{{participant.name}}</p>
-    </div>
-    <br />
-    <a href ng-hide="showSignUp" ng-click="showSignUp = !showSignUp">Tilmeld dig</a>
-    <form name="participantForm" ng-show="showSignUp" ng-controller="SignupController as signupCtrl" ng-submit="participantForm.$valid && signupCtrl.addParticipant(this.$parent.ride)">
+<div class="page-card-wide">
+    <h3>Planlæg en tur i {{location.track.Name}}</h3>
+    <form name="rideForm" ng-controller="RideController as rideCtrl" ng-submit="rideForm.$valid && rideCtrl.addRide(location.track)">
         <div>
-            <p>Dit navn: </p>
-            <input type="text" class="input-field" required ng-model="signupCtrl.participant.name" />
-            <input type="submit" class="button standard-button" value="Tag med" />
+            <div>
+                <div class="input-group">
+                    <p>Dato: </p>
+                    <input type="date" min="{{rideCtrl.date | date:'yyyy-MM-dd'}}" class="input-field" required ng-model="rideCtrl.ride.date" />
+                </div>
+                <div class="input-group">
+                    <p>Tid: </p>
+                    <input type="time" class="input-field" required ng-model="rideCtrl.ride.time" />
+                </div>
+            </div>
+            <div>
+                <p>Kommentar: </p>
+                <textarea rows="2" class="input-field" ng-model="rideCtrl.ride.body" placeholder="Kontakt info, begynder/øvet, vi mødes ved... etc."></textarea>
+            </div>
+            <div class="input-group">
+                <p><span class="icon icon-bike"></span> Dit navn:</p>
+                <input type="text" required ng-model="rideCtrl.ride.author" class="input-field">
+            </div>
+            <div class="input-group">
+                <input type="submit" value="Del din tur" class="button standard-button" />
+            </div>
         </div>
     </form>
 </div>
-<br />
-<h3>Fortæl hvornår du kører i {{location.track.Name}}</h3>
-<form name="rideForm" ng-controller="RideController as rideCtrl" ng-submit="rideForm.$valid && rideCtrl.addRide(location.track)">
-    <div>
-        <div>
-            <div class="input-group">
-                <p>Dato: </p>
-                <input type="date" min="{{rideCtrl.date | date:'yyyy-MM-dd'}}" class="input-field" required ng-model="rideCtrl.ride.date" />
-            </div>
-            <div class="input-group">
-                <p>Tid: </p>
-                <input type="time" class="input-field" required ng-model="rideCtrl.ride.time" />
-            </div>
-        </div>
-        <div>
-            <p>Kommentar: </p>
-            <textarea rows="2" class="input-field" ng-model="rideCtrl.ride.body" placeholder="Kontakt info, begynder/øvet, vi mødes ved... etc."></textarea>
-        </div>
-        <div class="input-group">
-            <p>Dit navn:</p>
-            <input type="text" required ng-model="rideCtrl.ride.author" class="input-field">
-        </div>
-        <br />
-        <div class="input-group">
-            <input type="submit" value="Del din tur" class="button standard-button" />
-        </div>
-    </div>
-</form>
