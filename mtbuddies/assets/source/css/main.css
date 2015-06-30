@@ -696,7 +696,7 @@ blockquote:nth-child(odd) {
 }
 
 .content {
-  padding: 1em 0px;
+  padding: 2em 0px;
   background-color: #e0e0e0;
 }
 
@@ -765,11 +765,11 @@ li.tab.active a {
 
 h1 {
   font-size: 3em;
-  margin: 0.5em 0em;
+  margin: 0em 0em 0.5em 0em;
 }
 
 h2 {
-  font-size: 2em;
+  font-size: 1.8em;
   font-weight: 300;
   margin: 1em 0em;
   line-height: 1.5em;
