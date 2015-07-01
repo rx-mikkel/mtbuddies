@@ -28,7 +28,6 @@ namespace mtbuddies.Controllers
                 tracks.Add(trackVM);
             }
 
-
             return Json(tracks);
         }
     }
