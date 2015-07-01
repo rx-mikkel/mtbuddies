@@ -933,7 +933,11 @@ textarea {
 
 .track-info-mobile {
   display: none;
-  padding: 0px 1em;
+  padding: 2em 1em;
+}
+
+.track-info-mobile h2 {
+  margin: 0px 1em 0px 0px;
 }
 
 .column {

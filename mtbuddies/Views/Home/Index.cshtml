@@ -35,25 +35,11 @@
             <p>Længde: {{location.track.Length}}km</p>
             <p>Sværhed: {{location.track.Difficulty}} / 10</p>
         </div>
-        <ul class="tabs">
-            <li class="tab" ng-class="{active:tab.tabSelected('rides')}">
-                <a href ng-click="tab.setTab('rides')">Kommende ture</a>
-            </li>
-            <li class="tab" ng-class="{active:tab.tabSelected('reviews')}">
-                <a href ng-click="tab.setTab('reviews')">Anmeldelser</a>
-            </li>
-        </ul>
     </div>
 </div>
 <div class="content">
     <div class="wrap">
-                
-        <div ng-show="tab.tabSelected('rides')">
-            <track-rides></track-rides>
-        </div>
-        <div ng-show="tab.tabSelected('reviews')">
-            <track-reviews></track-reviews>
-        </div>
+        <track-rides></track-rides>
     </div>
 </div>
         
