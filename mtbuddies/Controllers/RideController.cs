@@ -12,6 +12,7 @@ namespace mtbuddies.Controllers
     {
         private IRideService _rideService = new RideService();
 
+        [HttpPost]
         public JsonResult AddParticipant(long rideId, string name)
         {
             Boolean savedSuccessfully = _rideService.AddParticipantToRide(rideId, new Participant(name));

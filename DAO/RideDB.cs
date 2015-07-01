@@ -12,13 +12,16 @@ namespace DAO
         private MTBuddiesContext _context = new MTBuddiesContext();
 
         public RideDB() { }
-
+        
         public Boolean AddParticipantToRide(long rideId, Participant participant)
-        {
-            Ride ride = _context.Rides.Where(x => x.Id == rideId).SingleOrDefault();
+        {            
+            Ride ride = _context.Rides
+                .Include("Participants")
+                .Select(x => x)                        
+                .SingleOrDefault(x => x.Id == rideId);
 
             ride.Participants.Add(participant);
-
+            
             return 0 < _context.SaveChanges();
         }
     }

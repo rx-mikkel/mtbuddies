@@ -14,9 +14,7 @@
 	    $http.post('/Tracks/GetTrackDetails').success(function (data) {
             data[0].reviews = [];
 
-            tracks.track = data[0];
-
-            console.log(data[0]);
+            tracks.track = data[0];            
 
             tracks.hasRides = function () {
                 return tracks.track.Rides.length;
@@ -43,7 +41,7 @@
 		};
 	});
 
-	app.controller('RideController', function() {
+	app.controller('RideController', function () {
 		var presetTime = new Date(2015, 0, 1, 10, 0, 0);
 		var presetDate = new Date();
 
@@ -65,34 +63,47 @@
 		};
 	});
 
-	app.controller('SignupController', function () {
-	    this.participant = {};
+	app.controller('SignupController', ['$http', function ($http) {
+	    this.participant = {};        	    
 
 	    this.addParticipant = function (ride) {
+
+            //TODO Get rideId and entered name.
+	        $http({
+	            method: 'POST',
+	            url: '/Ride/AddParticipant',
+	            data: {
+	                rideId: 1,
+	                name: 'Peter Thomsen'
+	            }
+	        }).success(function (data) {
+	            //TODO update stuff when server returns.
+	        });
+
 	        this.participant.createdOn = Date.now();
 	        ride.participants.push(this.participant);
 	        this.participant = {};
 	    };
-	});
+	}]);
 
-	app.controller('ReviewController', function() {
+	app.controller('ReviewController', function () {
 		this.review = {};
 
-		this.addReview = function(track) {
+		this.addReview = function (track) {
 			this.review.createdOn = Date.now();
 			track.reviews.push(this.review);
 			this.review = {};
 		};
 	});
 
-	app.directive('trackRides', function() {
+	app.directive('trackRides', function () {
 		return {
 			restrict: 'E',
 			templateUrl: '/SubViews/Rides.html'
 		};
 	});
 
-	app.directive('trackReviews', function() {
+	app.directive('trackReviews', function () {
 		return {
 			restrict: 'E',
 			templateUrl: '/SubViews/Reviews.html'

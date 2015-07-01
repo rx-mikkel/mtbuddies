@@ -21,6 +21,10 @@ namespace mtbuddies.Models
             this.Comment = ride.Comment;
             this.Date = ride.Date.ToShortDateString();
             this.Time = ride.Date.ToShortTimeString();
+            this.Participant = new List<String>();
+            foreach (DomainModels.Participant participant in ride.Participants) {
+                this.Participant.Add(participant.Name);
+            }            
         }
     }
 }

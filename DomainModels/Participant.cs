@@ -7,8 +7,10 @@ namespace DomainModels
 {
     public class Participant
     {
-        public long Id { get; private set; }
-        public String Name { get; private set; }
+        public long Id { get; set; }
+        public String Name { get; set; }
+
+        public Participant() { }
 
         public Participant(string name)
         {

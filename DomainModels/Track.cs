@@ -17,5 +17,7 @@ namespace DomainModels
         public string Description { get; set; }
         public string Direction { get; set; }
         public ICollection<Ride> Rides { get; set; }
+
+        public Track() { }
     }
 }

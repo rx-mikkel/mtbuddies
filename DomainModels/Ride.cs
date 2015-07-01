@@ -5,6 +5,9 @@ using System.Text;
 
 namespace DomainModels
 {
+    /// <summary>
+    /// Class used to hold information about a ride.
+    /// </summary>
     public class Ride
     {
         public long Id { get; set; }
@@ -12,6 +15,11 @@ namespace DomainModels
         public String Author { get; set; }
         public String Comment { get; set; }
         public Track Track { get; set; }
-        public IList<Participant> Participants { get; set; }
+        public ICollection<Participant> Participants { get; set; }
+
+        /// <summary>
+        /// Default constructor used by EF.
+        /// </summary>
+        public Ride() { }
     }
 }
