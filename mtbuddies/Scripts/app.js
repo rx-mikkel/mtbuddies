@@ -41,7 +41,7 @@
 		};
 	});
 
-	app.controller('RideController', function () {
+	app.controller('RideController', ['$http', function ($http) {
 		var presetTime = new Date(2015, 0, 1, 10, 0, 0);
 		var presetDate = new Date();
 
@@ -53,7 +53,24 @@
 			participants: []
 		};
 
-		this.addRide = function(track) {
+        
+
+		this.addRide = function (track) {
+
+		    //TODO Add the right data here.
+		    $http({
+		        method: 'POST',
+		        url: '/Ride/AddRide',
+		        data: {
+		            date: '02-07-2015',
+		            time: '22.00',
+		            author: 'Johnny Testen',
+		            comment: 'Dette er en test comment.'                    
+		        }
+		    }).success(function (data) {
+		        //TODO update stuff here when server returns.
+		    });
+
 			this.ride.createdOn = Date.now();
 			track.rides.push(this.ride);
 			this.ride = {
@@ -61,7 +78,7 @@
 				date: presetDate
 			};
 		};
-	});
+	}]);
 
 	app.controller('SignupController', ['$http', function ($http) {
 	    this.participant = {};        	    
@@ -75,7 +92,7 @@
 	            data: {
 	                rideId: 1,
 	                name: 'Peter Thomsen'
-	            }
+	                }
 	        }).success(function (data) {
 	            //TODO update stuff when server returns.
 	        });

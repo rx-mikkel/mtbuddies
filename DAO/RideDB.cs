@@ -12,7 +12,19 @@ namespace DAO
         private MTBuddiesContext _context = new MTBuddiesContext();
 
         public RideDB() { }
-        
+
+        public Boolean AddRide(Ride ride)
+        {
+            Track track = _context.Tracks
+                .Include("Rides")
+                .Select(x => x)
+                .SingleOrDefault(x => x.Id == 4);
+
+            track.Rides.Add(ride);
+
+            return 0 < _context.SaveChanges();
+        }
+
         public Boolean AddParticipantToRide(long rideId, Participant participant)
         {            
             Ride ride = _context.Rides

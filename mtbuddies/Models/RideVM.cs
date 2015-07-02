@@ -7,12 +7,14 @@ namespace mtbuddies.Models
 {
     public class RideVM
     {
-        public long Id { get; private set; }
-        public String Date { get; private set; }
-        public String Time { get; private set; }
-        public String Author { get; private set; }
-        public String Comment { get; private set; }
-        public IList<String> Participant { get; private set; }
+        public long Id { get; set; }
+        public String Date { get; set; }
+        public String Time { get; set; }
+        public String Author { get; set; }
+        public String Comment { get; set; }
+        public IList<String> Participant { get; set; }
+
+        public RideVM() { }
 
         public RideVM(DomainModels.Ride ride)
         {
