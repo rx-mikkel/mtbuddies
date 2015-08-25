@@ -611,7 +611,7 @@ textarea {
    ========================================================================== */
 body {
   font-size: 10px;
-  color: #555;
+  color: #444;
   background-color: #fff;
   font-family: "Roboto", sans-serif;
 }
@@ -634,7 +634,7 @@ blockquote:nth-child(odd) {
 
 .page-section {
   padding: 2em 1em;
-  border-bottom: 1px dashed #888888;
+  border-bottom: 1px dashed #777777;
 }
 
 .page-card-wide {
@@ -758,7 +758,7 @@ li.tab.active {
 }
 
 li.tab.active a {
-  color: #555;
+  color: #444;
   font-weight: bold;
   border-bottom: 1px dotted transparent;
 }
@@ -796,16 +796,16 @@ a {
           transition: all 0.4s ease;
   text-decoration: none;
   border-bottom: 1px dotted transparent;
-  color: #14b8b6;
+  color: #1490A2;
 }
 
 a:visited {
-  color: #14acb8;
+  color: #1484a2;
 }
 
 a:hover {
-  color: #19e6e4;
-  border-bottom: 1px dotted #19e6e4;
+  color: #1ab8cf;
+  border-bottom: 1px dotted #1ab8cf;
 }
 
 span {
@@ -840,7 +840,7 @@ placeholder {
 }
 
 .input-field {
-  border: 1px solid #bbbbbb;
+  border: 1px solid #aaaaaa;
   padding: .5em;
   -webkit-transition: border 0.3s ease;
           transition: border 0.3s ease;
@@ -848,11 +848,11 @@ placeholder {
 }
 
 .input-field:hover {
-  border: 1px solid #a2a2a2;
+  border: 1px solid #919191;
 }
 
 .input-field:focus {
-  border: 1px solid #14b8b6;
+  border: 1px solid #1490A2;
 }
 
 .input-field, .button {
@@ -864,18 +864,18 @@ placeholder {
   border: none;
   padding: 0.5em 1em;
   font-weight: 500;
-  -webkit-transition: background 0.3s ease;
-          transition: background 0.3s ease;
+  -webkit-transition: background 0.5s ease;
+          transition: background 0.5s ease;
 }
 
 .standard-button {
-  background-color: #14b8b6;
+  background-color: #1490A2;
   color: #fff;
-  border: 1px solid #14b8b6;
+  border: 1px solid #1490A2;
 }
 
 .standard-button:hover {
-  background-color: #00e6e3;
+  background-color: #02b4cd;
 }
 
 textarea {
