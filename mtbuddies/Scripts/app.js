@@ -85,20 +85,22 @@
 
 	    this.addParticipant = function (ride) {
 
+            console.log(this.participant)
+
             //TODO Get rideId and entered name.
 	        $http({
 	            method: 'POST',
 	            url: '/Ride/AddParticipant',
 	            data: {
-	                rideId: 1,
-	                name: 'Peter Thomsen'
-	                }
+	                rideId: ride.Id,
+                    name: this.participant.name
+	            }
 	        }).success(function (data) {
-	            //TODO update stuff when server returns.
+	            
 	        });
 
 	        this.participant.createdOn = Date.now();
-	        ride.participants.push(this.participant);
+	        ride.Participant.push(this.participant);
 	        this.participant = {};
 	    };
 	}]);
