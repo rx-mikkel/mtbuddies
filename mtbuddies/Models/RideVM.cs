@@ -12,7 +12,7 @@ namespace mtbuddies.Models
         public String Time { get; set; }
         public String Author { get; set; }
         public String Comment { get; set; }
-        public IList<String> Participant { get; set; }
+        public IList<String> Participants { get; set; }
 
         public RideVM() { }
 
@@ -23,9 +23,9 @@ namespace mtbuddies.Models
             this.Comment = ride.Comment;
             this.Date = ride.Date.ToShortDateString();
             this.Time = ride.Date.ToShortTimeString();
-            this.Participant = new List<String>();
+            this.Participants = new List<String>();
             foreach (DomainModels.Participant participant in ride.Participants) {
-                this.Participant.Add(participant.Name);
+                this.Participants.Add(participant.Name);
             }            
         }
     }

@@ -23,8 +23,8 @@
                 <div class="participant">
                     <p>{{ride.Author}}</p>
                 </div>
-                <div class="participant" ng-repeat="partName in ride.Participant track by $index">
-                    <p>{{partName}}</p>
+                <div class="participant" ng-repeat="name in ride.Participants track by $index">
+                    <p>{{name}}</p>
                 </div>
                 <br />
                 <a href ng-hide="showSignUp" ng-click="showSignUp = !showSignUp">Tilmeld dig</a>

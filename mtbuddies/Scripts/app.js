@@ -1,15 +1,8 @@
-(function () {    
-	var app = angular.module('mtBuddies', []);
+(function () {
+    var app = angular.module('mtBuddies', []);
 
 	app.controller('TrackController', ['$http', function ($http) {
-	    tracks = this;
-
-	    /*var mtbTracks = this;
-		mtbTracks.tracks = [ ];
-		
-		$http.get('js/tracks.json').success(function(data) {
-	        mtbTracks.tracks = data;
-	    });*/	    
+	    var tracks = this;
 
 	    $http.post('/Tracks/GetTrackDetails').success(function (data) {
             data[0].reviews = [];
@@ -30,7 +23,7 @@
 	}]);
 
 	app.controller('TabController', function () {
-		this.tab = "rides";
+		this.tab = 'rides';
 
 		this.setTab = function (activeTab) {
 			this.tab = activeTab;
@@ -84,36 +77,22 @@
 	    this.participant = {};        	    
 
 	    this.addParticipant = function (ride) {
+	        var newParticipant = this.participant;
 
-            console.log(this.participant)
-
-            //TODO Get rideId and entered name.
 	        $http({
 	            method: 'POST',
 	            url: '/Ride/AddParticipant',
 	            data: {
 	                rideId: ride.Id,
-                    name: this.participant.name
+	                name: newParticipant.name
 	            }
 	        }).success(function (data) {
-	            
+	            ride.Participants.push(newParticipant.name);	            
 	        });
 
-	        this.participant.createdOn = Date.now();
-	        ride.Participant.push(this.participant);
 	        this.participant = {};
 	    };
 	}]);
-
-	app.controller('ReviewController', function () {
-		this.review = {};
-
-		this.addReview = function (track) {
-			this.review.createdOn = Date.now();
-			track.reviews.push(this.review);
-			this.review = {};
-		};
-	});
 
 	app.directive('trackRides', function () {
 		return {
@@ -128,31 +107,4 @@
 			templateUrl: '/SubViews/Reviews.html'
 		};
 	});
-    /*
-	var tracks = [
-	{
-	    name: 'Kongshøj',
-	    map: "/Content/images/kongshoej.png",
-	    length: 7.5,
-	    difficulty: 3,
-	    direction: "cw",
-	    lat: 57.003186,
-	    lon: 9.920193,
-	    description: "MTB-ruten i Kongshøj er en begyndervenlig rute, som samtidig er attraktiv for mere garvede ryttere, der gerne vil presse sig selv mod uret.",
-	    reviews: [],
-	    rides: []
-	},
-	{
-	    name: 'Hammer bakker',
-	    map: "/Content/images/hammer-bakker.png",
-	    length: 13,
-	    difficulty: 4,
-	    direction: "ccw",
-	    lat: 57.122455,
-	    lon: 10.024561,
-	    description: "Sporet Hammer bakker er en tur for de øvede ryttere. Det er en smuk, men hård rute igennem kuperet skov. Der er garanti for sved på panden!",
-	    reviews: [],
-	    rides: []
-	}];
-    */
 })();
