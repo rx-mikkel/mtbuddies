@@ -15,10 +15,8 @@ namespace DAO
 
         public Boolean AddRide(Ride ride)
         {
-            Track track = _context.Tracks
-                .Include("Rides")
-                .Select(x => x)
-                .SingleOrDefault(x => x.Id == 4);
+            Track track = _context.Rides.Where(x => x.Id == ride.Id)
+                .Select(x => x.Track).SingleOrDefault();
 
             track.Rides.Add(ride);
 

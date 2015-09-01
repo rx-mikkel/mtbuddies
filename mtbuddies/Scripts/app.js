@@ -49,27 +49,29 @@
         
 
 		this.addRide = function (track) {
+		    var newRide = this.ride;
+		    newRide.date.setHours(0);
+		    newRide.date.setMinutes(0);
 
-		    //TODO Add the right data here.
-		    $http({
-		        method: 'POST',
-		        url: '/Ride/AddRide',
-		        data: {
-		            date: '02-07-2015',
-		            time: '22.00',
-		            author: 'Johnny Testen',
-		            comment: 'Dette er en test comment.'                    
-		        }
-		    }).success(function (data) {
-		        //TODO update stuff here when server returns.
-		    });
+            $http({
+                method: 'POST',
+                url: '/Ride/AddRide',
+                data: {
+                    date: newRide.date.getTime(),
+                    time: newRide.time.getTime(),
+                    author: newRide.author,
+                    comment: newRide.body,
+                    participants: []
+                }
+            }).success(function () {
+                newRide.createdOn = Date.now();
+                track.rides.push(newRide);
+            });
 
-			this.ride.createdOn = Date.now();
-			track.rides.push(this.ride);
-			this.ride = {
-				time: presetTime,
-				date: presetDate
-			};
+            this.ride = {
+                time: presetTime,
+                date: presetDate,
+            };
 		};
 	}]);
 
