@@ -14,11 +14,11 @@ namespace mtbuddies.Controllers
         private IRideService _rideService = new RideService();
 
         [HttpPost]
-        public JsonResult AddRide(RideVM rideVM)
+        public JsonResult AddRide(RideVM rideVM, long trackId)
         {
             //int[] date = Array.ConvertAll(rideVM.Date.Split('-'), s => int.Parse(s));
-
-            // TODO Map this to the right track in the service and get the track ID
+            
+            //TODO map the dates and time right.
             var ticks = (long.Parse(rideVM.Date) * 10000) + 621355968000000000;
             var date = new DateTime(ticks);
             var timeTicks = (long.Parse(rideVM.Time) * 10000) + 621355968000000000;
@@ -33,7 +33,7 @@ namespace mtbuddies.Controllers
                 Date = date,                
             };
 
-            Boolean savedSuccessfully = _rideService.AddRide(ride);
+            Boolean savedSuccessfully = _rideService.AddRide(ride, trackId);
 
             return Json(savedSuccessfully);
         }

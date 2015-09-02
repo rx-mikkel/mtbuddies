@@ -10,16 +10,21 @@ namespace mtbuddiesSerivce
 {
     public class RideService : IRideService
     {
-        IRideDB _rideDB = new RideDB();
+        IRideDB _rideDB = new RideDB();        
 
-        public Boolean AddRide(Ride ride)
-        {
-            return _rideDB.AddRide(ride);
+        public Boolean AddRide(Ride ride, long trackId)
+        {           
+            return _rideDB.AddRide(ride, trackId);
         }
 
         public Boolean AddParticipantToRide(long rideId, Participant participant)
         {
             return _rideDB.AddParticipantToRide(rideId, participant);
+        }
+
+        public IList<Ride> GetActiveTrackRides(long trackId)
+        {
+            return _rideDB.GetActiveTrackRides(trackId);
         }
     }
 }

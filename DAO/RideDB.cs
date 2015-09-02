@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.Entity;
 
 namespace DAO
 {
@@ -13,10 +14,9 @@ namespace DAO
 
         public RideDB() { }
 
-        public Boolean AddRide(Ride ride)
+        public Boolean AddRide(Ride ride, long trackId)
         {
-            Track track = _context.Rides.Where(x => x.Id == ride.Id)
-                .Select(x => x.Track).SingleOrDefault();
+            Track track = _context.Tracks.Include("Rides").SingleOrDefault(x => x.Id == trackId);
 
             track.Rides.Add(ride);
 
@@ -34,5 +34,11 @@ namespace DAO
             
             return 0 < _context.SaveChanges();
         }
-    }
+
+        public IList<Ride> GetActiveTrackRides(long trackId)
+        {
+            return _context.Tracks.Where(x => x.Id == trackId).SelectMany(x => x.Rides)
+                .Where(x => x.Date >= DateTime.Now).Include("Participants").ToList();
+        }
+    } 
 }

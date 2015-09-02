@@ -45,24 +45,27 @@
 			date: presetDate,
 			participants: []
 		};
-
-        
-
+       
 		this.addRide = function (track) {
 		    var newRide = this.ride;
 		    newRide.date.setHours(0);
 		    newRide.date.setMinutes(0);
 
+		    var data = {
+		        trackId: track.Id,
+		        rideVM: {
+		            date: newRide.date.getTime(),
+		            time: newRide.time.getTime(),
+		            author: newRide.author,
+		            comment: newRide.body,
+		            participants: []
+		        }		        
+		    };
+
             $http({
                 method: 'POST',
                 url: '/Ride/AddRide',
-                data: {
-                    date: newRide.date.getTime(),
-                    time: newRide.time.getTime(),
-                    author: newRide.author,
-                    comment: newRide.body,
-                    participants: []
-                }
+                data: data,
             }).success(function () {
                 newRide.createdOn = Date.now();
                 track.rides.push(newRide);
@@ -88,7 +91,7 @@
 	                rideId: ride.Id,
 	                name: newParticipant.name
 	            }
-	        }).success(function (data) {
+	        }).success(function () {
 	            ride.Participants.push(newParticipant.name);	            
 	        });
 

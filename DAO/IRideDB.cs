@@ -1,12 +1,15 @@
 ﻿using DomainModels;
 using System;
+using System.Collections.Generic;
 
 namespace DAO
 {
     public interface IRideDB
     {
-        Boolean AddRide(Ride ride);
+        Boolean AddRide(Ride ride, long trackId);
 
         Boolean AddParticipantToRide(long rideId, Participant participant);
+
+        IList<Ride> GetActiveTrackRides(long trackId);
     }
 }
