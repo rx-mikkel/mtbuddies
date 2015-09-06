@@ -5,17 +5,17 @@
         </blockquote>
     </div>
     <div class="page-card" ng-repeat="ride in location.track.Rides">
-        <div class="card-inner">
-            <div class="card-section group">
-                <div class="column">
-                    <p><span class="icon icon-bike"></span>{{ride.Date|date}}</p>
-                </div>
-                <div class="column">
-                    <p><span class="icon icon-bike"></span>{{ride.Time}}</p>
-                </div>
+        <div class="card-header group">
+            <div class="column">
+                <p>{{ride.Date | date:'fullDate'}}</p>
             </div>
+            <div class="column time">
+                <p>{{ride.Time}}</p>
+            </div>
+        </div>
+        <div class="card-inner">
             <div class="card-section">
-                <p><span class="icon icon-bike"></span>Kommentarer</p>
+                <p>Kommentarer</p>
                 <blockquote ng-show="{{ride.Comment.length}}">{{ride.Comment}}</blockquote>
             </div>
             <div class="card-section last">
@@ -27,11 +27,12 @@
                     <p>{{name}}</p>
                 </div>
                 <br />
-                <a href ng-hide="showSignUp" ng-click="showSignUp = !showSignUp">Tilmeld dig</a>
-                <form name="participantForm" ng-show="showSignUp" ng-controller="SignupController as signupCtrl" ng-submit="participantForm.$valid && signupCtrl.addParticipant(this.$parent.ride)">
-                    <div>
+                <form name="participantForm" ng-controller="SignupController as signupCtrl" ng-submit="participantForm.$valid && signupCtrl.addParticipant(this.$parent.ride)">
+                    <div class="input-group">
                         <p>Dit navn:</p>
                         <input type="text" class="input-field" required ng-model="signupCtrl.participant.name" />
+                    </div>
+                    <div class="input-group">
                         <input type="submit" class="button standard-button" value="Tag med" />
                     </div>
                 </form>

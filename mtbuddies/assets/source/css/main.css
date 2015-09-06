@@ -663,6 +663,19 @@ blockquote:nth-child(odd) {
   padding: 0px;
 }
 
+.page-card .card-header {
+  background-color: #fff;
+  padding: 2em;
+}
+
+.page-card .card-header .time {
+  text-align: right;
+}
+
+.page-card .card-header .time p {
+  font-size: 24px;
+}
+
 .page-card .card-inner {
   background-color: #fff;
   padding: 1em 2em;
@@ -670,11 +683,6 @@ blockquote:nth-child(odd) {
 
 .page-card .card-inner .card-section {
   padding: 1em 0px;
-  border-bottom: 1px dotted #d9d9d9;
-}
-
-.page-card .card-inner .card-section.last {
-  border-bottom: none;
 }
 
 .page-card .card-inner p .icon {
@@ -902,8 +910,7 @@ textarea {
 }
 
 .track-presentation {
-  background-color: #34553b;
-  background-image: url("../images/track-bg.png");
+  background-color: #1e6951;
   padding: 2em 0px;
 }
 
@@ -1011,9 +1018,10 @@ textarea {
 
 .participant {
   padding: 0.5em 1em;
-  background-color: #fafafa;
+  background-color: #f2f2f2;
   display: inline-block;
   margin-bottom: 1em;
+  font-size: 13px;
 }
 
 .participant + .participant {

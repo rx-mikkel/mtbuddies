@@ -68,7 +68,7 @@
                 data: data,
             }).success(function () {
                 newRide.createdOn = Date.now();
-                track.rides.push(newRide);
+                track.Rides.push(newRide);
             });
 
             this.ride = {

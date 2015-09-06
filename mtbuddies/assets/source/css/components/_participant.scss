@@ -1,8 +1,9 @@
 .participant {
 	padding: $spacing/4 $spacing/2;
-	background-color: darken($background-color,2%);
+	background-color: darken($background-color,5%);
 	display: inline-block;
 	margin-bottom: $spacing/2;
+	font-size: 13px;
 
 	+ .participant {
 		margin-left: $spacing/2;
