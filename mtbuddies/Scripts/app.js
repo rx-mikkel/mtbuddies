@@ -54,8 +54,8 @@
 		    var data = {
 		        trackId: track.Id,
 		        rideVM: {
-		            date: newRide.date.getTime(),
-		            time: newRide.time.getTime(),
+		            date: newRide.date.toISOString(),
+		            time: newRide.time.toISOString(),
 		            author: newRide.author,
 		            comment: newRide.body,
 		            participants: []

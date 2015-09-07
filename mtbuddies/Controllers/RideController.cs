@@ -16,16 +16,11 @@ namespace mtbuddies.Controllers
         [HttpPost]
         public JsonResult AddRide(RideVM rideVM, long trackId)
         {
-            //int[] date = Array.ConvertAll(rideVM.Date.Split('-'), s => int.Parse(s));
-            
-            //TODO map the dates and time right.
-            var ticks = (long.Parse(rideVM.Date) * 10000) + 621355968000000000;
-            var date = new DateTime(ticks);
-            var timeTicks = (long.Parse(rideVM.Time) * 10000) + 621355968000000000;
-            var time = new DateTime(timeTicks);
+            var date = DateTime.Parse(rideVM.Date);
+            var time = DateTime.Parse(rideVM.Time);
 
-            date.AddHours(time.Hour);
-            date.AddMinutes(time.Minute);
+            date = date.AddHours(time.Hour);
+            date = date.AddMinutes(time.Minute);
 
             Ride ride = new Ride() {
                 Author = rideVM.Author,
