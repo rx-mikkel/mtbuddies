@@ -29,12 +29,12 @@ gulp.task('sass', function (){
 // Images
 
 gulp.task('imagemin', function () {
-	gulp.src('./source/images/**/*.{png,jpg,jpeg,gif,svg}')
+	gulp.src('./source/images/**/*.{png,jpg,jpeg,svg,gif}')
 	.pipe(imagemin({
 		optimizationLevel: 5,
 		progressive: false,
-		interlaced: false,
-		multipass: true
+		multipass: true,
+		interlaced: false
 	}))
 	.pipe(gulp.dest('.././Content/images'));
 });
