@@ -192,6 +192,7 @@
     <Content Include="Content\images\track-bg.png" />
     <Content Include="Content\images\track_bg.png" />
     <Content Include="favicon.ico" />
+    <Content Include="favicon.png" />
     <Content Include="Global.asax" />
     <Content Include="Content\css\main.scss" />
     <Content Include="Content\css\_defaults.scss" />
