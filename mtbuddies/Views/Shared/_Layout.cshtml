@@ -5,13 +5,14 @@
     <title>Sporet {{location.track.Name}}</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <meta name="description" content="Planlæg din næste mountainbike tur online, og mød nye venner i skoven." />    
+    <meta name="description" content="Planlæg din næste mountainbike tur online, og mød nye venner i skoven." />
 
     <link href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,700' rel='stylesheet' type='text/css' />
     <link rel="icon" type="image/png" href="images/favicon.png" />
 
 
-    @Styles.Render("~/content/css")    
+    @Styles.Render("~/content/css")
+    @*@Styles.Render("~/content/scss")*@
 </head>
 
 <body ng-controller="TabController as tab">
@@ -37,7 +38,7 @@
             </div>
         </div>
     </div>
-    
+
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.min.js"></script>
     @Scripts.Render("~/bundles/apps")
     @RenderSection("scripts", required: false)

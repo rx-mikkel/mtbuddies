@@ -12,6 +12,8 @@ namespace DAO.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
+
+            //SetSqlGenerator("MySql.Data.MySqlClient", new MySql.Data.Entity.MySqlMigrationSqlGenerator());
         }
 
         protected override void Seed(MTBuddiesContext context)
