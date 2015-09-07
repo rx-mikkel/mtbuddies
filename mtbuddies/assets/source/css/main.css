@@ -1019,10 +1019,7 @@ textarea {
   display: inline-block;
   margin-bottom: 1em;
   font-size: 13px;
-}
-
-.participant + .participant {
-  margin-left: 1em;
+  margin-right: 1em;
 }
 
 .footer {

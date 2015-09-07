@@ -1,4 +1,4 @@
-<div class="group">
+<div class="group masonry">
     <div ng-hide="location.hasRides()">
         <blockquote class="text-inactive">
             Der er ingen planlagte ture. Planlæg en herunder
@@ -68,3 +68,10 @@
         </div>
     </form>
 </div>
+<script type="text/javascript">
+    var msnry = new Masonry('.masonry', {
+        itemSelector: '.page-card',
+        columnWidth: 320,
+        isFitWidth: true
+    });
+</script>

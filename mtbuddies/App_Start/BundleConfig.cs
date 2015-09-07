@@ -15,9 +15,6 @@ namespace mtbuddies
             bundles.Add(new StyleBundle("~/Content/css").Include(
                 "~/Content/css/main.css"));
 
-            //bundles.Add(new StyleBundle("~/Content/scss").Include(
-            //    "~/Content/css/_reset.scss",
-            //    "~/Content/css/_layout.scss"));
         }
     }
 }
