@@ -60,6 +60,7 @@
     <Compile Include="ITracksDB.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MTBuddiesContext.cs" />
+    <Compile Include="MySQLMTBuddiesContext.cs" />
     <Compile Include="RideDB.cs" />
     <Compile Include="TracksDB.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
