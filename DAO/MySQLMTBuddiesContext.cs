@@ -10,15 +10,12 @@ using System.Threading.Tasks;
 namespace DAO
 {
     [DbConfigurationType(typeof(MySqlEFConfiguration))]
-    class MySQLMTBuddiesContext: DbContext
+    class MySQLMTBuddiesContext : CommonDBContext
     {           
-        public virtual DbSet<Track> Tracks { get; set; }
-        public virtual DbSet<Ride> Rides { get; set; }
-        public virtual DbSet<Participant> Participants { get; set; }
-
-        public MySQLMTBuddiesContext()
+        public MySQLMTBuddiesContext(String connectionString) :
+            base(connectionString) 
         {
 
-        }
+        }                
     }
 }

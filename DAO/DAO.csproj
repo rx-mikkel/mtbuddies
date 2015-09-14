@@ -25,7 +25,7 @@
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
+    <DefineConstants>TRACE;MySQL</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
@@ -56,9 +56,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CommonDBContext.cs" />
     <Compile Include="IRideDB.cs" />
     <Compile Include="ITracksDB.cs" />
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="MSSQLMTBuddiesContext.cs" />
     <Compile Include="MTBuddiesContext.cs" />
     <Compile Include="MySQLMTBuddiesContext.cs" />
     <Compile Include="RideDB.cs" />

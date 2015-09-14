@@ -7,7 +7,7 @@ namespace DAO.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<DAO.MTBuddiesContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<DAO.MSSQLMTBuddiesContext>
     {
         public Configuration()
         {
@@ -16,7 +16,7 @@ namespace DAO.Migrations
             //SetSqlGenerator("MySql.Data.MySqlClient", new MySql.Data.Entity.MySqlMigrationSqlGenerator());
         }
 
-        protected override void Seed(MTBuddiesContext context)
+        protected override void Seed(MSSQLMTBuddiesContext context)
         {
 
             if (!context.Tracks.Any(x => x.Name.Equals("Kongshøj")))

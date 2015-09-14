@@ -10,7 +10,7 @@ namespace DAO
 {
     public class RideDB : IRideDB
     {
-        private MTBuddiesContext _context = new MTBuddiesContext();
+        private CommonDBContext _context = MTBuddiesContext.GetContext();
 
         public RideDB() { }
 

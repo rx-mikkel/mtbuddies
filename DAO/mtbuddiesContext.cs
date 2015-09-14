@@ -1,18 +1,22 @@
-﻿using DomainModels;
-using MySql.Data.Entity;
+﻿using System;
+using System.Collections.Generic;
 using System.Data.Entity;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace DAO
 {
-    public class MTBuddiesContext : DbContext
-    {           
-        public virtual DbSet<Track> Tracks { get; set; }
-        public virtual DbSet<Ride> Rides { get; set; }
-        public virtual DbSet<Participant> Participants { get; set; }
-
-        public MTBuddiesContext()
+    public static class MTBuddiesContext
+    {
+        public static CommonDBContext GetContext()
         {
+            CommonDBContext context = new MSSQLMTBuddiesContext();
+#if MySQL
+            context = new MySQLMTBuddiesContext("productionMySQL");
+#endif
 
+            return context;
         }
     }
 }

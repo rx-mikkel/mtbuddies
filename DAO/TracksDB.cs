@@ -10,7 +10,7 @@ namespace DAO
 {
     public class TracksDB : ITracksDB
     {
-        private MTBuddiesContext _context = new MTBuddiesContext();
+        private CommonDBContext _context = MTBuddiesContext.GetContext();
 
         public TracksDB() { }
 
