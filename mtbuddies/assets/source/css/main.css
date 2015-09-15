@@ -825,6 +825,8 @@ span {
 
 .text-inactive {
   color: #999999;
+  padding: 15px 20px;
+  margin: 0px 10px 10px 10px;
 }
 
 /* common */
@@ -1072,9 +1074,11 @@ textarea {
 
 .overview-body table {
   width: 100%;
+  margin-bottom: 10px;
 }
 
 .overview-body table th {
+  font-weight: normal;
   background-color: #fff;
   text-align: left;
   color: #1490A2;
@@ -1092,6 +1096,10 @@ textarea {
   border-bottom: 1px dotted #1ab8cf;
 }
 
+.overview-body table th p.active {
+  font-weight: bold;
+}
+
 .overview-body table td, .overview-body table th {
   padding: 10px 20px;
   border-bottom: 1px solid #d9d9d9;
@@ -1102,11 +1110,16 @@ textarea {
 }
 
 .overview-body table tr {
+  transition: ease 0.4s all;
   background-color: whitesmoke;
 }
 
 .overview-body table tr:nth-child(odd) {
   background-color: #ebebeb;
+}
+
+.overview-body table tr:hover {
+  background-color: #fff;
 }
 
 /*
