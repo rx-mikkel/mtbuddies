@@ -622,9 +622,9 @@ img {
 
 blockquote {
   background: #f7f7f7;
-  border-left: 0.5em solid #d9d9d9;
+  border-left: 5px solid #d9d9d9;
   margin: 0px;
-  padding: 1em;
+  padding: 10px;
   font-size: 1.6em;
 }
 
@@ -633,14 +633,14 @@ blockquote:nth-child(odd) {
 }
 
 .page-section {
-  padding: 2em 1em;
+  padding: 20px 10px;
   border-bottom: 1px dashed #777777;
 }
 
 .page-card-wide {
   background-color: #fff;
-  padding: 2em;
-  margin: 1em;
+  padding: 20px;
+  margin: 10px;
 }
 
 .page-card-wide h3 {
@@ -656,7 +656,7 @@ blockquote:nth-child(odd) {
 .page-card {
   float: left;
   width: 50%;
-  padding: 1em;
+  padding: 10px;
 }
 
 .page-card .column {
@@ -665,7 +665,7 @@ blockquote:nth-child(odd) {
 
 .page-card .card-header {
   background-color: #fff;
-  padding: 2em;
+  padding: 20px;
 }
 
 .page-card .card-header .time {
@@ -678,17 +678,21 @@ blockquote:nth-child(odd) {
 
 .page-card .card-inner {
   background-color: #fff;
-  padding: 1em 2em;
+  padding: 10px 20px;
 }
 
 .page-card .card-inner .card-section {
-  padding: 1em 0px;
+  padding: 10px 0px;
 }
 
 .page-card .card-inner p .icon {
   font-size: 28px;
   vertical-align: middle;
   margin-right: 5px;
+}
+
+.align-right {
+  text-align: right;
 }
 
 .pull-right {
@@ -704,7 +708,7 @@ blockquote:nth-child(odd) {
 }
 
 .content {
-  padding: 2em 0px;
+  padding: 20px 0px;
   background-color: #e0e0e0;
 }
 
@@ -751,13 +755,13 @@ blockquote:nth-child(odd) {
 }
 
 ul.tabs {
-  margin: 0em 1em;
-  margin-top: 2em;
+  margin: 0em 10px;
+  margin-top: 20px;
 }
 
 li.tab {
   display: inline-block;
-  padding: 1em 2em;
+  padding: 10px 20px;
   border-radius: 0px;
 }
 
@@ -937,16 +941,16 @@ textarea {
 
 .track-info-mobile {
   display: none;
-  padding: 2em 1em;
+  padding: 20px 10px;
 }
 
 .track-info-mobile h2 {
-  margin: 0px 1em 0px 0px;
+  margin: 0px 10px 0px 0px;
 }
 
 .column {
   width: 50%;
-  padding: 0px 1em;
+  padding: 0px 10px;
   float: left;
 }
 
@@ -1014,18 +1018,18 @@ textarea {
 }
 
 .participant {
-  padding: 0.5em 1em;
+  padding: 5px 10px;
   background-color: #f2f2f2;
   display: inline-block;
-  margin-bottom: 1em;
+  margin-bottom: 10px;
   font-size: 13px;
-  margin-right: 1em;
+  margin-right: 10px;
 }
 
 .footer {
   color: #cccccc;
   background-color: #012e2c;
-  padding: 4em 0em;
+  padding: 40px 0em;
 }
 
 .footer p {
@@ -1040,7 +1044,7 @@ textarea {
 .footer .logo img {
   height: 48px;
   vertical-align: top;
-  margin-bottom: 1em;
+  margin-bottom: 10px;
 }
 
 .footer .logo p {
@@ -1053,8 +1057,56 @@ textarea {
 
 @media screen and (max-width: 619px) {
   .footer .logo {
-    margin-top: 2em;
+    margin-top: 20px;
   }
+}
+
+.overview-header {
+  padding: 10px 0px;
+}
+
+.overview-header h2 {
+  margin: 0px;
+  font-size: 24px;
+}
+
+.overview-body table {
+  width: 100%;
+}
+
+.overview-body table th {
+  background-color: #fff;
+  text-align: left;
+  color: #1490A2;
+}
+
+.overview-body table th p {
+  border-bottom: 1px solid transparent;
+  cursor: pointer;
+  display: inline-block;
+  transition: all 0.4s ease;
+}
+
+.overview-body table th p:hover {
+  color: #1ab8cf;
+  border-bottom: 1px dotted #1ab8cf;
+}
+
+.overview-body table td, .overview-body table th {
+  padding: 10px 20px;
+  border-bottom: 1px solid #d9d9d9;
+}
+
+.overview-body table td.align-right, .overview-body table th.align-right {
+  text-align: right;
+}
+
+.overview-body table tr {
+  background-color: whitesmoke;
+}
+
+.overview-body table tr:nth-child(odd) {
+  background-color: #ebebeb;
 }
 
 /*

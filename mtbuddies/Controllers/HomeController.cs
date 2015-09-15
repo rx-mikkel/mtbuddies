@@ -13,6 +13,10 @@ namespace mtbuddies.Controllers
         public ActionResult Index()
         {            
             return View();
-        }        
+        }
+        public ActionResult Oversigt()
+        {
+            return View();
+        }  
     }
 }
