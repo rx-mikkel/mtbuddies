@@ -18,5 +18,10 @@ namespace DAO
         {
             return _context.Tracks.Include("Rides.Participants").ToList();                                              
         }
+
+        public Track GetTrackDetails(long trackId)
+        {
+            return _context.Tracks.Include("Rides.Participants").Where(x => x.Id == trackId).SingleOrDefault();
+        }
     }
 }

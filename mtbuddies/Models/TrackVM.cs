@@ -27,6 +27,7 @@ namespace mtbuddies.Models
             this.Length = track.Length;
             this.Lat = track.Lat;
             this.Lon = track.Lon;
+            this.Difficulty = track.Difficulty;
             this.Description = track.Description;
             this.Direction = Direction;
 

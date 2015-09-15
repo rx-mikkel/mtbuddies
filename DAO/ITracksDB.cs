@@ -10,5 +10,6 @@ namespace DAO
     public interface ITracksDB
     {
         IList<Track> GetAllTracks();
+        Track GetTrackDetails(long trackId);
     }
 }
