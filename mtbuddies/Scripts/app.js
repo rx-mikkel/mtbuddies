@@ -4,7 +4,7 @@
 	app.controller('TrackController', ['$http', function ($http) {
 	    var tracks = this;
 
-	    $http.post('/Tracks/GetTrackDetails').success(function (data) {
+	    $http.post('/Tracks/GetTracks').success(function (data) {
             data[0].reviews = [];
 
             tracks.track = data[0];            

@@ -16,8 +16,8 @@ namespace mtbuddies.Controllers
     {
         private ITracksService _trackService = new TracksService();
 
-        [Obsolete("GetTrackDetails() is deprecated, Use GetTrackDetails(long) instead.")]
-        public JsonResult GetTrackDetails()
+        [Obsolete("GetTracks() is deprecated, Use GetTrackDetails(long) instead.")]
+        public JsonResult GetTracks()
         {
             IList<TrackVM> tracks = new List<TrackVM>();
             IList<Track> foundTracks = _trackService.GetAllTracks();

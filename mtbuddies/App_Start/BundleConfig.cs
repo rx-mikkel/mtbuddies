@@ -6,8 +6,7 @@ namespace mtbuddies
     public class BundleConfig
     {
         public static void RegisterBundles(BundleCollection bundles)
-        {
-            BundleTable.EnableOptimizations = false;
+        {            
             bundles.Add(new ScriptBundle("~/bundles/apps").Include(
                 "~/Scripts/app.js"));                 
 
