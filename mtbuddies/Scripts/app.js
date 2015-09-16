@@ -4,18 +4,12 @@
 	app.controller('TrackController', ['$http', function ($http) {
 	    var tracks = this;
 
-	    $http.post('/Tracks/GetTracks').success(function (data) {
-            data[0].reviews = [];
-
-            tracks.track = data[0];            
+	    $http.post('/Tracks/GetTrackDetails', { trackId: 1 }).success(function (data) {
+            tracks.track = data;
 
             tracks.hasRides = function () {
                 return tracks.track.Rides.length;
-            };
-
-            tracks.hasReviews = function () {
-                return tracks.track.reviews.length;
-            };
+            };            
 
         }).error(function () {
             //TODO Handle errors

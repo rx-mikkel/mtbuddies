@@ -1,4 +1,5 @@
 ﻿using DomainModels;
+using DTO;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -22,6 +23,20 @@ namespace DAO
         public Track GetTrackDetails(long trackId)
         {
             return _context.Tracks.Include("Rides.Participants").Where(x => x.Id == trackId).SingleOrDefault();
+        }
+
+        public IList<TrackOverviewDTO> GetTracksOverview()
+        {
+            IList<TrackOverviewDTO> tracks = _context.Tracks.Select(x =>
+                new TrackOverviewDTO() {
+                    TrackId = x.Id, 
+                    Name = x.Name, 
+                    ActiveRides = x.Rides.Count(r => r.Date >= DateTime.Now),
+                    Difficulty = x.Difficulty, 
+                    Length = x.Length
+                }).ToList();
+
+            return tracks;
         }
     }
 }

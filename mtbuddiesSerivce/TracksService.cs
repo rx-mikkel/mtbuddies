@@ -1,5 +1,6 @@
 ﻿using DAO;
 using DomainModels;
+using DTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,6 +20,11 @@ namespace mtbuddiesSerivce
         public Track GetTrackDetails(long trackId)
         {
             return _tracksDB.GetTrackDetails(trackId);
+        }
+
+        public IList<TrackOverviewDTO> GetTracksOverview()
+        {
+            return _tracksDB.GetTracksOverview();
         }
     }
 }

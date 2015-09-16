@@ -1,0 +1,16 @@
+﻿@model DTO.TrackOverviewDTO
+
+<tr>
+    <td>        
+        <a href="/Tracks/Track/">@Html.DisplayFor(x => x.Name)</a>
+    </td>
+    <td class="align-right">
+        <p>@Html.DisplayFor(x => x.ActiveRides)</p>
+    </td>
+    <td class="align-right">
+        <p>@Html.DisplayFor(x => x.Difficulty)</p>
+    </td>
+    <td class="align-right">
+        <p>@Html.DisplayFor(x => x.Length) km</p>
+    </td>
+</tr>

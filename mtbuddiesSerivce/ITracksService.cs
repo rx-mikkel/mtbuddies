@@ -1,4 +1,5 @@
 ﻿using DomainModels;
+using DTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,5 +11,6 @@ namespace mtbuddiesSerivce
     {
         IList<Track> GetAllTracks();
         Track GetTrackDetails(long trackId);
+        IList<TrackOverviewDTO> GetTracksOverview();
     }
 }

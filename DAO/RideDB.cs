@@ -18,7 +18,7 @@ namespace DAO
         {
             Track track = _context.Tracks.Include("Rides").SingleOrDefault(x => x.Id == trackId);
 
-            track.Rides.Add(ride);
+            //track.Rides.Add(ride);
 
             return 0 < _context.SaveChanges();
         }

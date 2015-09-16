@@ -1,4 +1,5 @@
 ﻿using DomainModels;
+using DTO;
 using mtbuddiesSerivce;
 using System;
 using System.Collections.Generic;
@@ -10,9 +11,13 @@ namespace mtbuddies.Controllers
 {
     public class HomeController : Controller
     {
+        private ITracksService _trackService = new TracksService();
+
         public ActionResult Index()
-        {            
-            return View();
+        {
+            IList<TrackOverviewDTO> tracks = _trackService.GetTracksOverview();
+
+            return View(tracks);
         }
         public ActionResult Oversigt()
         {

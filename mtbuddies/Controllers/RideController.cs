@@ -11,7 +11,7 @@ namespace mtbuddies.Controllers
 {
     public class RideController : Controller
     {
-        private IRideService _rideService = new RideService();
+        private IRideService _rideService = new RideService();        
 
         [HttpPost]
         public JsonResult AddRide(RideVM rideVM, long trackId)

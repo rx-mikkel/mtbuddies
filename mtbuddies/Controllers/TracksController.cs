@@ -16,6 +16,11 @@ namespace mtbuddies.Controllers
     {
         private ITracksService _trackService = new TracksService();
 
+        public ActionResult Track()
+        {
+            return View();
+        }
+
         [Obsolete("GetTracks() is deprecated, Use GetTrackDetails(long) instead.")]
         public JsonResult GetTracks()
         {
