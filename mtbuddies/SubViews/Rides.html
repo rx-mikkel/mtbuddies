@@ -1,10 +1,10 @@
 <div class="group masonry">
-    <div ng-hide="location.hasRides()">
+    <div ng-hide="Track.hasRides()">
         <blockquote class="text-inactive">
             Der er ingen planlagte ture. Planlæg en herunder
         </blockquote>
     </div>
-    <div class="page-card" ng-repeat="ride in location.track.Rides">
+    <div class="page-card" ng-repeat="ride in Track.Rides">
         <div class="card-header group">
             <div class="column">
                 <p>{{ride.Date | date:'fullDate'}}</p>
@@ -41,7 +41,7 @@
     </div>
 </div>
 <div class="page-card-wide">
-    <h3>Planlæg en tur i {{location.track.Name}}</h3>
+    <h3>Planlæg en tur i {{Track.Name}}</h3>
     <form name="rideForm" ng-controller="RideController as rideCtrl" ng-submit="rideForm.$valid && rideCtrl.addRide(location.track)">
         <div>
             <div>
