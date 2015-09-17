@@ -1,6 +1,6 @@
 ﻿<!DOCTYPE html>
 
-<html ng-app="mtBuddies" ng-controller="TrackController as location">
+<html ng-app="mtBuddies">
 <head>
     <title>Sporet {{location.track.Name}}</title>
     <meta charset="utf-8" />
@@ -12,7 +12,20 @@
 </head>
 
 <body ng-controller="TabController as tab">
+    <div class="header">
+        <div class="wrap">
+            <div class="logo">
+                <img alt="mtbuddies" src="~/Content/images/logo.svg" />
+                <p>MTBuddies</p>
+            </div>
+        </div>
+    </div>
     @RenderBody()
+
+    <div id="main">
+        <div ng-view></div>
+    </div>
+    
 
     <div class="footer">
         <div class="wrap group">
@@ -36,6 +49,8 @@
     </div>
 
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.min.js"></script>
+    <script src="~/Scripts/angular-route.min.js"></script>    
+    <script src="~/Scripts/angular-resource.min.js"></script>
     @Scripts.Render("~/bundles/apps")
     @RenderSection("scripts", required: false)
 

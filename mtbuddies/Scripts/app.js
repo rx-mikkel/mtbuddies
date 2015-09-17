@@ -1,20 +1,25 @@
 (function () {
-    var app = angular.module('mtBuddies', []);
+    var app = angular.module('mtBuddies', ['ngRoute']);
 
-	app.controller('TrackController', ['$http', function ($http) {
-	    var tracks = this;
-
-	    $http.post('/Tracks/GetTrackDetails', { trackId: 1 }).success(function (data) {
-            tracks.track = data;
-
-            tracks.hasRides = function () {
-                return tracks.track.Rides.length;
-            };            
-
+    app.controller('TrackController', ['$scope', '$http', '$routeParams', function ($scope, $http, $routeParams) {        
+        $http.post('/Tracks/GetTrackDetails', { trackId: $routeParams.trackId }).success(function (data) {
+	        $scope.Track = data;
+	        $scope.Track.hasRides = function () {
+	            return $scope.Track.Rides.length;
+	        };
         }).error(function () {
             //TODO Handle errors
-        });        
+        });
 	}]);
+
+    app.controller('TrackOverviewController', ['$scope', '$http', function ($scope, $http) {
+        $http.post('/Tracks/GetTracksOverview').success(function (data) {            
+            $scope.tracks = data;
+            
+        }).error(function () {
+            //TODO Handle errors
+        });
+    }]);
 
 	app.controller('TabController', function () {
 		this.tab = 'rides';
@@ -106,4 +111,17 @@
 			templateUrl: '/SubViews/Reviews.html'
 		};
 	});
+
+	app.config([
+        '$routeProvider',
+        function ($routeProvider) {
+            $routeProvider.when('/Tracks/Track/:trackId', {
+                templateUrl: '/SubViews/Track.html',
+                controller: 'TrackController'
+            }).when('/', {
+                templateUrl: '/SubViews/TrackOverview.html',
+                controller: 'TrackOverviewController'
+            })
+        }
+	]);
 })();

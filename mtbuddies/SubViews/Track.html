@@ -1,0 +1,36 @@
+﻿<div class="track-presentation">
+    <div class="wrap group">
+        <div class="column column-left">
+            <div class="track-info">
+                <h1>{{Track.Name}}</h1>
+                <h2>{{Track.Description}}</h2>
+                <p>Længde: {{Track.Length}}km</p>
+                <p>Sværhed: {{Track.Difficulty}} / 10</p>
+            </div>
+        </div>
+        <div class="column column-right">
+            <div class="map-container {{Track.Direction}}">
+                <div class="track-info-short">
+                    <h1>{{Track.Name}}</h1>
+                </div>
+                <div class="direction-left"></div>
+                <div class="direction-right"></div>
+                <img ng-src="{{Track.Map}}" />
+            </div>
+        </div>
+    </div>
+</div>
+<div>
+    <div class="wrap">
+        <div class="track-info-mobile">
+            <h2>{{Track.Description}}</h2>
+            <p>Længde: {{Track.Length}}km</p>
+            <p>Sværhed: {{Track.Difficulty}} / 10</p>
+        </div>
+    </div>
+</div>
+<div class="content">
+    <div class="wrap">
+        <track-rides></track-rides>
+    </div>
+</div>

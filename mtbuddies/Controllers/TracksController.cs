@@ -9,6 +9,7 @@ using System.Web.Mvc;
 using DomainModels;
 using mtbuddiesSerivce;
 using mtbuddies.Models;
+using DTO;
 
 namespace mtbuddies.Controllers
 {
@@ -16,25 +17,9 @@ namespace mtbuddies.Controllers
     {
         private ITracksService _trackService = new TracksService();
 
-        public ActionResult Track()
+        public ActionResult Track(long id)
         {
             return View();
-        }
-
-        [Obsolete("GetTracks() is deprecated, Use GetTrackDetails(long) instead.")]
-        public JsonResult GetTracks()
-        {
-            IList<TrackVM> tracks = new List<TrackVM>();
-            IList<Track> foundTracks = _trackService.GetAllTracks();
-
-            foreach (Track track in foundTracks)
-            {
-                TrackVM trackVM = new TrackVM(track);
-
-                tracks.Add(trackVM);
-            }
-
-            return Json(tracks);
         }
 
         /// <summary>
@@ -49,6 +34,13 @@ namespace mtbuddies.Controllers
             TrackVM trackVM = new TrackVM(track);
 
             return Json(trackVM);
+        }
+
+        public JsonResult GetTracksOverview()
+        {
+            IList<TrackOverviewDTO> tracks = _trackService.GetTracksOverview();
+
+            return Json(tracks);
         }
     }
 }

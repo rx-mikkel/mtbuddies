@@ -17,7 +17,7 @@ namespace mtbuddies.Controllers
         {
             IList<TrackOverviewDTO> tracks = _trackService.GetTracksOverview();
 
-            return View(tracks);
+            return View();
         }
         public ActionResult Oversigt()
         {
