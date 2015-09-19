@@ -10,7 +10,7 @@
                 <p>{{ride.Date | date:'fullDate'}}</p>
             </div>
             <div class="column time">
-                <p>{{ride.Time}}</p>
+                <p>{{ride.Time | date:'H:mm'}}</p>
             </div>
         </div>
         <div class="card-inner">
@@ -42,25 +42,25 @@
 </div>
 <div class="page-card-wide">
     <h3>Planlæg en tur i {{Track.Name}}</h3>
-    <form name="rideForm" ng-controller="RideController as rideCtrl" ng-submit="rideForm.$valid && rideCtrl.addRide(location.track)">
+    <form name="rideForm" ng-controller="RideController as rideCtrl" ng-submit="rideForm.$valid && rideCtrl.addRide(Track)">
         <div>
             <div>
                 <div class="input-group">
                     <p>Dato: </p>
-                    <input type="date" min="{{rideCtrl.date | date:'yyyy-MM-dd'}}" class="input-field" required ng-model="rideCtrl.ride.date" />
+                    <input type="date" min="{{rideCtrl.Date | date:'yyyy-MM-dd'}}" class="input-field" required ng-model="rideCtrl.ride.Date" />
                 </div>
                 <div class="input-group">
                     <p>Tid: </p>
-                    <input type="time" class="input-field" required ng-model="rideCtrl.ride.time" />
+                    <input type="time" class="input-field" required ng-model="rideCtrl.ride.Time" />
                 </div>
             </div>
             <div>
                 <p>Kommentar: </p>
-                <textarea rows="2" class="input-field" ng-model="rideCtrl.ride.body" placeholder="Kontakt info, begynder/øvet, vi mødes ved... etc."></textarea>
+                <textarea rows="2" class="input-field" ng-model="rideCtrl.ride.Comment" placeholder="Kontakt info, begynder/øvet, vi mødes ved... etc."></textarea>
             </div>
             <div class="input-group">
                 <p><span class="icon icon-bike"></span> Dit navn:</p>
-                <input type="text" required ng-model="rideCtrl.ride.author" class="input-field">
+                <input type="text" required ng-model="rideCtrl.ride.Author" class="input-field">
             </div>
             <div class="input-group">
                 <input type="submit" value="Del din tur" class="button standard-button" />

@@ -43,26 +43,26 @@
 		var presetTime = new Date(2015, 0, 1, 10, 0, 0);
 		var presetDate = new Date();
 
-		this.date = presetDate;
+		this.Date = presetDate;
 
 		this.ride = {
-			time: presetTime,
-			date: presetDate,
-			participants: []
+			Time: presetTime,
+			Date: presetDate,
+			Participants: []
 		};
        
 		this.addRide = function (track) {
 		    var newRide = this.ride;
-		    newRide.date.setHours(0);
-		    newRide.date.setMinutes(0);
+		    newRide.Date.setHours(0);
+		    newRide.Date.setMinutes(0);
 
 		    var data = {
 		        trackId: track.Id,
 		        rideVM: {
-		            date: newRide.date.toISOString(),
-		            time: newRide.time.toISOString(),
-		            author: newRide.author,
-		            comment: newRide.body,
+		            date: newRide.Date.toISOString(),
+		            time: newRide.Time.toISOString(),
+		            author: newRide.Author,
+		            comment: newRide.Comment,
 		            participants: []
 		        }		        
 		    };
@@ -77,8 +77,8 @@
             });
 
             this.ride = {
-                time: presetTime,
-                date: presetDate,
+                Time: presetTime,
+                Date: presetDate,
             };
 		};
 	}]);
