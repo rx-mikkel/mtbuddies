@@ -37,8 +37,12 @@ namespace DAO
 
         public IList<Ride> GetActiveTrackRides(long trackId)
         {
-            return _context.Tracks.Where(x => x.Id == trackId).SelectMany(x => x.Rides)
+            IList<Ride> result = _context.Tracks.Where(x => x.Id == trackId).SelectMany(x => x.Rides)
                 .Where(x => x.Date >= DateTime.Now).Include("Participants").ToList();
+
+
+
+            return result;
         }
     } 
 }

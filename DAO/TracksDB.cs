@@ -22,16 +22,23 @@ namespace DAO
 
         public Track GetTrackDetails(long trackId)
         {
-            return _context.Tracks.Include("Rides.Participants").Where(x => x.Id == trackId).SingleOrDefault();
+            DateTime dateNow = DateTime.Now;
+            Track track = _context.Tracks.SingleOrDefault(x => x.Id == trackId);
+            track.Rides = _context.Rides.Where(x => x.Date >= dateNow && x.Track.Id == trackId).Include(x => x.Participants).ToList();
+            
+            //return _context.Tracks.Include("Rides.Participants").Where(x => x.Id == trackId).SingleOrDefault();
+
+            return track;
         }
 
         public IList<TrackOverviewDTO> GetTracksOverview()
         {
+            DateTime nowDate = DateTime.Now;
             IList<TrackOverviewDTO> tracks = _context.Tracks.Select(x =>
                 new TrackOverviewDTO() {
                     TrackId = x.Id, 
                     Name = x.Name, 
-                    ActiveRides = x.Rides.Count(r => r.Date >= DateTime.Now),
+                    ActiveRides = x.Rides.Count(r => r.Date >= nowDate),
                     Difficulty = x.Difficulty, 
                     Length = x.Length
                 }).ToList();
