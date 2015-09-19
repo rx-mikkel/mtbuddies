@@ -691,6 +691,10 @@ blockquote:nth-child(odd) {
   margin-right: 5px;
 }
 
+.show-mobile {
+  display: none;
+}
+
 .align-right {
   text-align: right;
 }
@@ -715,6 +719,12 @@ blockquote:nth-child(odd) {
 @media screen and (max-width: 619px) {
   .page-card {
     width: 100%;
+  }
+  .show-mobile {
+    display: inline-block;
+  }
+  .hide-mobile {
+    display: none;
   }
 }
 
@@ -799,7 +809,7 @@ p, a {
   margin: 0em;
 }
 
-p a, p span {
+p a, p span, a span {
   font-size: 1em;
 }
 

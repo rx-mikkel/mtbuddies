@@ -85,6 +85,10 @@ blockquote {
   }
 }
 
+.show-mobile {
+  display: none;
+}
+
 .align-right {
   text-align: right;
 }
@@ -108,6 +112,14 @@ blockquote {
 @media screen and (max-width: 619px) {
   .page-card {
     width: 100%;
+  }
+
+  .show-mobile {
+    display: inline-block;
+  }
+
+  .hide-mobile {
+    display: none;
   }
 }
 

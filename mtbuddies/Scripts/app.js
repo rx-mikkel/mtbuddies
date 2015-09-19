@@ -12,10 +12,16 @@
         });
 	}]);
 
-    app.controller('TrackOverviewController', ['$scope', '$http', function ($scope, $http) {
-        $http.post('/Tracks/GetTracksOverview').success(function (data) {            
+    app.controller('TrackOverviewController', ['$scope', '$filter', '$http', function ($scope, $filter, $http) {
+        $http.post('/Tracks/GetTracksOverview').success(function (data) {
+            var orderBy = $filter('orderBy');
             $scope.tracks = data;
-            
+
+            $scope.order = function (predicate, reverse) {
+                $scope.tracks = orderBy($scope.tracks, predicate, reverse);
+            }
+            $scope.order('Name', false);
+
         }).error(function () {
             //TODO Handle errors
         });

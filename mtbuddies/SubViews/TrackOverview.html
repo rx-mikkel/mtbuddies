@@ -7,55 +7,16 @@
             <div class="overview-body">
                 <table>
                     <tr>
-                        <th><p class="active">Spor</p></th>
-                        <th class="align-right"><p>Planlagte ture</p></th>
-                        <th class="align-right"><p>Sværhed</p></th>
-                        <th class="align-right"><p>Længde</p></th>
+                        <th><p ng-click="reverse=!reverse;order('Name', reverse)">Spor</p></th>
+                        <th class="align-right hide-mobile"><p ng-click="reverse=!reverse;order('ActiveRides', reverse)">Planlagte ture</p></th>
+                        <th class="align-right"><p ng-click="reverse=!reverse;order('Difficulty', reverse)">Sværhed</p></th>
+                        <th class="align-right"><p ng-click="reverse=!reverse;order('Length', reverse)">Længde</p></th>
                     </tr>
                     <tr ng-repeat="track in tracks">
-                        <td><a href="#/Tracks/Track/{{track.TrackId}}">{{track.Name}}</a></td>
-                        <td class="align-right"><p>{{track.ActiveRides}}</p></td>
+                        <td><a href="#/Tracks/Track/{{track.TrackId}}">{{track.Name}} <span class="show-mobile"> ({{track.ActiveRides}})</span></a></td>
+                        <td class="align-right hide-mobile"><p>{{track.ActiveRides}}</p></td>
                         <td class="align-right"><p>{{track.Difficulty}}</p></td>
                         <td class="align-right"><p>{{track.Length}} km</p></td>
-                    </tr>
-                </table>
-            </div>
-        </div>
-        <div class="overview-section">
-            <div class="overview-header">
-                <h2>Nordjylland</h2>
-            </div>
-            <div class="overview-body">
-                <table>
-                    <tr>
-                        <th><p class="active">Spor</p></th>
-                        <th class="align-right"><p>Planlagte ture</p></th>
-                        <th class="align-right"><p>Sværhed</p></th>
-                        <th class="align-right"><p>Længde</p></th>
-                    </tr>
-                    <tr>
-                        <td><a href="#/Tracks/Track/1">Kongshøj</a></td>
-                        <td class="align-right"><p>3</p></td>
-                        <td class="align-right"><p>4</p></td>
-                        <td class="align-right"><p>7,5 km</p></td>
-                    </tr>
-                    <tr>
-                        <td><a href="#/Test/Test/">Kongshøj</a></td>
-                        <td class="align-right"><p>3</p></td>
-                        <td class="align-right"><p>4</p></td>
-                        <td class="align-right"><p>7,5 km</p></td>
-                    </tr>
-                    <tr>
-                        <td><a href>Kongshøj</a></td>
-                        <td class="align-right"><p>3</p></td>
-                        <td class="align-right"><p>4</p></td>
-                        <td class="align-right"><p>7,5 km</p></td>
-                    </tr>
-                    <tr>
-                        <td><a href>Kongshøj</a></td>
-                        <td class="align-right"><p>3</p></td>
-                        <td class="align-right"><p>4</p></td>
-                        <td class="align-right"><p>7,5 km</p></td>
                     </tr>
                 </table>
             </div>
