@@ -18,7 +18,7 @@ namespace DAO.Migrations
 
         protected override void Seed(MSSQLMTBuddiesContext context)
         {
-
+            #region Adding Kongshøj and Hammerbakker
             if (!context.Tracks.Any(x => x.Name.Equals("Kongshøj")))
             {
                 Ride ride1 = new Ride() 
@@ -67,6 +67,41 @@ namespace DAO.Migrations
 
                 context.SaveChanges();
             }
+            #endregion
+
+            #region Adding Rold, Poulstrup and Lundby
+            if (!context.Tracks.Any(x => x.Name.Equals("Poulstrup Sø")))
+            {               
+                Track track1 = new Track()
+                {
+                    Name = "Poulstrup Sø",
+                    Map = "/Content/images/poulstrup.png",
+                    Length = 5.7,
+                    Difficulty = "5",
+                    Direction = "ccw",
+                    Lat = "56.973191",
+                    Lon = "9.934423",
+                    Description = "Ruten indeholder stejle op- og nedkørsler og kræver et grundlæggende kendskab til køreteknik. Specielt vanskelige forløb kan skæres fra ved at følge grøn markering fremfor sort og rød." 
+                };
+                Track track2 = new Track()
+                {
+                    Name = "Lundby Bakker",
+                    Map = "/Content/images/lundby-bakker.png",
+                    Length = 7.8,
+                    Difficulty = "6",
+                    Direction = "ccw",
+                    Lat = "56.983499",
+                    Lon = "10.002476",
+                    Description = "På dele af ruten er der lavet kantsikringer, og selv rutinerede ryttere vil kunne finde rigeligt med udfordringer. En specielt teknisk og vanskelig del omkring Alsbjerg er skiltet med sort markering, mens en kort smutvej er skiltet med grøn markering."
+                };
+
+                context.Tracks.Add(track1);
+                context.Tracks.Add(track2);
+
+                context.SaveChanges();
+            }
+
+            #endregion
         }
     }
 }
