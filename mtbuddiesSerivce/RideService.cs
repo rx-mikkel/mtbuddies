@@ -12,7 +12,7 @@ namespace mtbuddiesSerivce
     {
         IRideDB _rideDB = new RideDB();        
 
-        public Boolean AddRide(Ride ride, long trackId)
+        public Ride AddRide(Ride ride, long trackId)
         {           
             return _rideDB.AddRide(ride, trackId);
         }

@@ -13,7 +13,7 @@ namespace DAO
         {
             CommonDBContext context = new MSSQLMTBuddiesContext();
 #if MySQL
-            context = new MySQLMTBuddiesContext("productionMySQL");
+            context = new MySQLMTBuddiesContext();
 #endif
 
             return context;

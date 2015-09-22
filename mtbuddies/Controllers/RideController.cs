@@ -28,9 +28,9 @@ namespace mtbuddies.Controllers
                 Date = date,                
             };
 
-            Boolean savedSuccessfully = _rideService.AddRide(ride, trackId);
+            Ride newRide = _rideService.AddRide(ride, trackId);
 
-            return Json(savedSuccessfully);
+            return Json(ride.Id);
         }
 
         [HttpPost]

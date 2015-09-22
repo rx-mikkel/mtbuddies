@@ -14,13 +14,15 @@ namespace DAO
 
         public RideDB() { }
 
-        public Boolean AddRide(Ride ride, long trackId)
+        public Ride AddRide(Ride ride, long trackId)
         {
             Track track = _context.Tracks.Include("Rides").SingleOrDefault(x => x.Id == trackId);
 
             track.Rides.Add(ride);
 
-            return 0 < _context.SaveChanges();
+            _context.SaveChanges();
+
+            return ride;
         }
 
         public Boolean AddParticipantToRide(long rideId, Participant participant)

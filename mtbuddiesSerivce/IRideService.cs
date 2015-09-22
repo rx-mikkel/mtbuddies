@@ -5,7 +5,7 @@ namespace mtbuddiesSerivce
 {
     public interface IRideService
     {
-        Boolean AddRide(Ride ride, long trackId);
+        Ride AddRide(Ride ride, long trackId);
 
         Boolean AddParticipantToRide(long rideId, Participant participant);
 

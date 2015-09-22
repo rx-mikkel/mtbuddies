@@ -6,7 +6,7 @@ namespace DAO
 {
     public interface IRideDB
     {
-        Boolean AddRide(Ride ride, long trackId);
+        Ride AddRide(Ride ride, long trackId);
 
         Boolean AddParticipantToRide(long rideId, Participant participant);
 

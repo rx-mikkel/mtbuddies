@@ -71,8 +71,9 @@
                 method: 'POST',
                 url: '/Ride/AddRide',
                 data: data,
-            }).success(function () {
+            }).success(function (rideId) {
                 newRide.createdOn = Date.now();
+                newRide.Id = rideId;
                 track.Rides.push(newRide);
             });
 

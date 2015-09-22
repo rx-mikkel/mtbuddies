@@ -11,11 +11,11 @@ namespace DAO
 {
     [DbConfigurationType(typeof(MySqlEFConfiguration))]
     class MySQLMTBuddiesContext : CommonDBContext
-    {           
-        public MySQLMTBuddiesContext(String connectionString) :
-            base(connectionString) 
+    {
+        public MySQLMTBuddiesContext()
+            : base("productionMySQL")
         {
 
-        }                
+        }                     
     }
 }
