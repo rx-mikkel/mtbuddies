@@ -207,6 +207,7 @@
     <Content Include="Content\images\logo_bw.svg" />
     <Content Include="Content\images\lundby-bakker.png" />
     <Content Include="Content\images\poulstrup.png" />
+    <Content Include="Content\images\rold.png" />
     <Content Include="Content\images\track-bg.png" />
     <Content Include="Content\images\track_bg.png" />
     <Content Include="favicon.ico" />

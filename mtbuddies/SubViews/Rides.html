@@ -17,25 +17,31 @@
             <div class="card-section">
                 <p>Kommentarer</p>
                 <blockquote ng-show="{{ride.Comment.length}}">{{ride.Comment}}</blockquote>
-            </div>
-            <div class="card-section last">
-                <p><span class="icon icon-bike"></span> Deltagere</p>
-                <div class="participant">
-                    <p>{{ride.Author}}</p>
-                </div>
-                <div class="participant" ng-repeat="name in ride.Participants track by $index">
-                    <p>{{name}}</p>
-                </div>
-                <br />
-                <form name="participantForm" ng-controller="SignupController as signupCtrl" ng-submit="participantForm.$valid && signupCtrl.addParticipant(this.$parent.ride)">
-                    <div class="input-group">
-                        <p>Dit navn:</p>
-                        <input type="text" class="input-field" required ng-model="signupCtrl.participant.name" />
-                    </div>
-                    <div class="input-group">
-                        <input type="submit" class="button standard-button" value="Tag med" />
+                <a class="align-right hide" href ng-click="showSignUp = !showSignUp">Skriv en kommentar</a>
+                <form name="" ng-show="showSignUp">
+                    <div>
+                        <textarea rows="2" class="input-field" placeholder="Eventuelle spørgsmål til turen eller relevente kommentarer."></textarea>
                     </div>
                 </form>
+                <div class="card-section last">
+                    <p><span class="icon icon-bike"></span> Deltagere</p>
+                    <div class="participant">
+                        <p>{{ride.Author}}</p>
+                    </div>
+                    <div class="participant" ng-repeat="name in ride.Participants track by $index">
+                        <p>{{name}}</p>
+                    </div>
+                    <br />
+                    <form name="participantForm" ng-controller="SignupController as signupCtrl" ng-submit="participantForm.$valid && signupCtrl.addParticipant(this.$parent.ride)">
+                        <div class="input-group">
+                            <p>Dit navn:</p>
+                            <input type="text" class="input-field" required ng-model="signupCtrl.participant.name" />
+                        </div>
+                        <div class="input-group">
+                            <input type="submit" class="button standard-button" value="Tag med" />
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </div>

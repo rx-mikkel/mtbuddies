@@ -703,6 +703,10 @@ blockquote:nth-child(odd) {
   float: right;
 }
 
+.hide {
+  display: none;
+}
+
 /* Layout */
 .wrap {
   margin: 0em auto;
