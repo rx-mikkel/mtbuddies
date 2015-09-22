@@ -15,12 +15,7 @@ namespace mtbuddies.Controllers
 {
     public class TracksController : Controller
     {
-        private ITracksService _trackService = new TracksService();
-
-        public ActionResult Track(long id)
-        {
-            return View();
-        }
+        private ITracksService _trackService = new TracksService();        
 
         /// <summary>
         /// Returning a trackVM as Json found by the trackId given.
