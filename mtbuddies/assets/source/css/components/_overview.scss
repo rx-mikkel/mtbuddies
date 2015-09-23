@@ -18,7 +18,7 @@
 			font-weight: normal;
 			background-color: $color-light;
 			text-align: left;
-			color: $active-color;
+			color: adjust-hue($active-color,-10%);
 			p {
 				border-bottom: 1px solid transparent;
 				cursor: pointer;

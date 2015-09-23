@@ -4,6 +4,11 @@
 	padding: 1em;
 
 	.logo {
+		a {
+			border-bottom: none;
+			color: $color-light;
+			outline: none;
+		}
 		img {
 			height: 64px;
 			vertical-align: top;

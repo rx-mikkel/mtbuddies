@@ -913,6 +913,12 @@ textarea {
   padding: 1em;
 }
 
+.header .logo a {
+  border-bottom: none;
+  color: #fff;
+  outline: none;
+}
+
 .header .logo img {
   height: 64px;
   vertical-align: top;
@@ -1095,7 +1101,7 @@ textarea {
   font-weight: normal;
   background-color: #fff;
   text-align: left;
-  color: #1490A2;
+  color: #14a29c;
 }
 
 .overview-body table th p {
