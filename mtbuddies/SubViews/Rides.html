@@ -4,19 +4,19 @@
             Der er ingen planlagte ture. Planlæg en herunder
         </blockquote>
     </div>
-    <div class="page-card" ng-repeat="ride in Track.Rides">
+    <div class="page-card" ng-repeat="ride in Track.rides">
         <div class="card-header group">
             <div class="column">
-                <p>{{ride.Date | date:'fullDate'}}</p>
+                <p>{{ride.date | date:'fullDate'}}</p>
             </div>
             <div class="column time">
-                <p>{{ride.Time | date:'H:mm'}}</p>
+                <p>{{ride.time | date:'H:mm'}}</p>
             </div>
         </div>
         <div class="card-inner">
             <div class="card-section">
                 <p>Kommentarer</p>
-                <blockquote ng-show="{{ride.Comment.length}}">{{ride.Comment}}</blockquote>
+                <blockquote ng-show="{{ride.comment.length}}">{{ride.comment}}</blockquote>
                 <a class="align-right hide" href ng-click="showSignUp = !showSignUp">Skriv en kommentar</a>
                 <form name="" ng-show="showSignUp">
                     <div>
@@ -26,9 +26,9 @@
                 <div class="card-section last">
                     <p><span class="icon icon-bike"></span> Deltagere</p>
                     <div class="participant">
-                        <p>{{ride.Author}}</p>
+                        <p>{{ride.author}}</p>
                     </div>
-                    <div class="participant" ng-repeat="name in ride.Participants track by $index">
+                    <div class="participant" ng-repeat="name in ride.participants track by $index">
                         <p>{{name}}</p>
                     </div>
                     <br />
@@ -47,26 +47,26 @@
     </div>
 </div>
 <div class="page-card-wide">
-    <h3>Planlæg en tur i {{Track.Name}}</h3>
+    <h3>Planlæg en tur i {{Track.name}}</h3>
     <form name="rideForm" ng-controller="RideController as rideCtrl" ng-submit="rideForm.$valid && rideCtrl.addRide(Track)">
         <div>
             <div>
                 <div class="input-group">
                     <p>Dato: </p>
-                    <input type="date" min="{{rideCtrl.Date | date:'yyyy-MM-dd'}}" class="input-field" required ng-model="rideCtrl.ride.Date" />
+                    <input type="date" min="{{rideCtrl.date | date:'yyyy-MM-dd'}}" class="input-field" required ng-model="rideCtrl.ride.date" />
                 </div>
                 <div class="input-group">
                     <p>Tid: </p>
-                    <input type="time" class="input-field" required ng-model="rideCtrl.ride.Time" />
+                    <input type="time" class="input-field" required ng-model="rideCtrl.ride.time" />
                 </div>
             </div>
             <div>
                 <p>Kommentar: </p>
-                <textarea rows="2" class="input-field" ng-model="rideCtrl.ride.Comment" placeholder="Kontakt info, begynder/øvet, vi mødes ved... etc."></textarea>
+                <textarea rows="2" class="input-field" ng-model="rideCtrl.ride.comment" placeholder="Kontakt info, begynder/øvet, vi mødes ved... etc."></textarea>
             </div>
             <div class="input-group">
                 <p><span class="icon icon-bike"></span> Dit navn:</p>
-                <input type="text" required ng-model="rideCtrl.ride.Author" class="input-field">
+                <input type="text" required ng-model="rideCtrl.ride.author" class="input-field">
             </div>
             <div class="input-group">
                 <input type="submit" value="Del din tur" class="button standard-button" />

@@ -8,7 +8,9 @@ namespace mtbuddies
         public static void RegisterBundles(BundleCollection bundles)
         {            
             bundles.Add(new ScriptBundle("~/bundles/apps").Include(
-                "~/Scripts/app.js"));
+                "~/Scripts/angular.js",
+                "~/Scripts/angular-route.js",                
+                "~/Scripts/app.js"));            
         }
     }
 }

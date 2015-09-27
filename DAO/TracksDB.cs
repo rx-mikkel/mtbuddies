@@ -24,9 +24,7 @@ namespace DAO
         {
             DateTime dateNow = DateTime.Now;
             Track track = _context.Tracks.SingleOrDefault(x => x.Id == trackId);
-            track.Rides = _context.Rides.Where(x => x.Date >= dateNow && x.Track.Id == trackId).Include(x => x.Participants).ToList();
-            
-            //return _context.Tracks.Include("Rides.Participants").Where(x => x.Id == trackId).SingleOrDefault();
+            track.Rides = _context.Rides.Where(x => x.Date >= dateNow && x.Track.Id == trackId).Include(x => x.Participants).ToList();                       
 
             return track;
         }

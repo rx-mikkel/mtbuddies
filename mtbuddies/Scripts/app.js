@@ -2,25 +2,29 @@
     var app = angular.module('mtBuddies', ['ngRoute']);
 
     app.controller('TrackController', ['$scope', '$http', '$routeParams', function ($scope, $http, $routeParams) {        
-        $http.post('/Tracks/GetTrackDetails', { trackId: $routeParams.trackId }).success(function (data) {
-	        $scope.Track = data;
-	        $scope.Track.hasRides = function () {
-	            return $scope.Track.Rides.length;
-	        };
-        }).error(function () {
-            //TODO Handle errors
-        });
+        $http.get('api/Track/GetTrackDetailsById',
+            {
+                params:
+                   { trackId: $routeParams.trackId }
+            }).success(function (data) {
+	            $scope.Track = data;
+	            $scope.Track.hasRides = function () {
+	                return $scope.Track.rides.length;
+	            };
+            }).error(function () {
+                //TODO Handle errors
+            });
 	}]);
 
     app.controller('TrackOverviewController', ['$scope', '$filter', '$http', function ($scope, $filter, $http) {
-        $http.post('/Tracks/GetTracksOverview').success(function (data) {
+        $http.get('api/Track/GetTracksOverview').success(function (data) {
             var orderBy = $filter('orderBy');
             $scope.tracks = data;
 
             $scope.order = function (predicate, reverse) {
                 $scope.tracks = orderBy($scope.tracks, predicate, reverse);
             }
-            $scope.order('Name', false);
+            $scope.order('name', false);
 
         }).error(function () {
             //TODO Handle errors
@@ -43,43 +47,42 @@
 		var presetTime = new Date(2015, 0, 1, 10, 0, 0);
 		var presetDate = new Date();
 
-		this.Date = presetDate;
+		this.date = presetDate;
 
 		this.ride = {
-			Time: presetTime,
-			Date: presetDate,
-			Participants: []
+			time: presetTime,
+			date: presetDate,
+			participants: []
 		};
        
 		this.addRide = function (track) {
 		    var newRide = this.ride;
-		    newRide.Date.setHours(0);
-		    newRide.Date.setMinutes(0);
-
-		    var data = {
-		        trackId: track.Id,
-		        rideVM: {
-		            date: newRide.Date.toISOString(),
-		            time: newRide.Time.toISOString(),
-		            author: newRide.Author,
-		            comment: newRide.Comment,
-		            participants: []
-		        }		        
-		    };
+		    newRide.date.setHours(0);
+		    newRide.date.setMinutes(0);
+		    		   		        
+		    var rideVM = {
+		        date: newRide.date.toISOString(),
+		        time: newRide.time.toISOString(),
+		        author: newRide.author,
+		        comment: newRide.comment,
+		        participants: [],
+		        trackId: track.id,
+		    }		    
 
             $http({
                 method: 'POST',
-                url: '/Ride/AddRide',
-                data: data,
+                url: 'api/Ride/AddRide',
+                contentType: "application/json",
+                data: JSON.stringify(rideVM),
             }).success(function (rideId) {
                 newRide.createdOn = Date.now();
-                newRide.Id = rideId;
-                track.Rides.push(newRide);
+                newRide.id = rideId;
+                track.rides.push(newRide);
             });
 
             this.ride = {
-                Time: presetTime,
-                Date: presetDate,
+                time: presetTime,
+                date: presetDate,
             };
 		};
 	}]);
@@ -92,13 +95,9 @@
 
 	        $http({
 	            method: 'POST',
-	            url: '/Ride/AddParticipant',
-	            data: {
-	                rideId: ride.Id,
-	                name: newParticipant.name
-	            }
+	            url: 'api/Ride/AddParticipant?rideId=' + ride.id + '&name=' + newParticipant.name,	            
 	        }).success(function () {
-	            ride.Participants.push(newParticipant.name);	            
+	            ride.participants.push(newParticipant.name);	            
 	        });
 
 	        this.participant = {};

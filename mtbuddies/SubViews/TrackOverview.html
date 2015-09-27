@@ -7,16 +7,16 @@
             <div class="overview-body">
                 <table>
                     <tr>
-                        <th><p ng-click="reverse=!reverse;order('Name', reverse)">Spor</p></th>
-                        <th class="align-right hide-mobile"><p ng-click="reverse=!reverse;order('ActiveRides', reverse)">Planlagte ture</p></th>
-                        <th class="align-right"><p ng-click="reverse=!reverse;order('Difficulty', reverse)">Sværhed</p></th>
-                        <th class="align-right"><p ng-click="reverse=!reverse;order('Length', reverse)">Længde</p></th>
+                        <th><p ng-click="reverse=!reverse;order('name', reverse)">Spor</p></th>
+                        <th class="align-right hide-mobile"><p ng-click="reverse=!reverse;order('activeRides', reverse)">Planlagte ture</p></th>
+                        <th class="align-right"><p ng-click="reverse=!reverse;order('difficulty', reverse)">Sværhed</p></th>
+                        <th class="align-right"><p ng-click="reverse=!reverse;order('length', reverse)">Længde</p></th>
                     </tr>
                     <tr ng-repeat="track in tracks">
-                        <td><a href="#/Tracks/Track/{{track.TrackId}}">{{track.Name}} <span class="show-mobile"> ({{track.ActiveRides}})</span></a></td>
-                        <td class="align-right hide-mobile"><p>{{track.ActiveRides}}</p></td>
-                        <td class="align-right"><p>{{track.Difficulty}}</p></td>
-                        <td class="align-right"><p>{{track.Length}} km</p></td>
+                        <td><a href="#/Tracks/Track/{{track.trackId}}">{{track.name}} <span class="show-mobile"> ({{track.activeRides}})</span></a></td>
+                        <td class="align-right hide-mobile"><p>{{track.activeRides}}</p></td>
+                        <td class="align-right"><p>{{track.difficulty}}</p></td>
+                        <td class="align-right"><p>{{track.length}} km</p></td>
                     </tr>
                 </table>
             </div>

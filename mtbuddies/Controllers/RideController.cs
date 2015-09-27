@@ -5,16 +5,16 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Http;
 using System.Web.Mvc;
 
 namespace mtbuddies.Controllers
 {
-    public class RideController : Controller
+    public class RideController : ApiController
     {
-        private IRideService _rideService = new RideService();        
-
-        [HttpPost]
-        public JsonResult AddRide(RideVM rideVM, long trackId)
+        private IRideService _rideService = new RideService();
+        
+        public long AddRide([FromBody]RideVM rideVM)
         {
             var date = DateTime.Parse(rideVM.Date);
             var time = DateTime.Parse(rideVM.Time);
@@ -28,17 +28,14 @@ namespace mtbuddies.Controllers
                 Date = date,                
             };
 
-            Ride newRide = _rideService.AddRide(ride, trackId);
+            Ride newRide = _rideService.AddRide(ride, rideVM.TrackId);
 
-            return Json(ride.Id);
+            return ride.Id;
         }
 
-        [HttpPost]
-        public JsonResult AddParticipant(long rideId, string name)
+        public bool AddParticipant([FromUri]long rideId, [FromUri]string name)
         {
-            Boolean savedSuccessfully = _rideService.AddParticipantToRide(rideId, new Participant(name));
-
-            return Json(savedSuccessfully);
+            return _rideService.AddParticipantToRide(rideId, new Participant(name));
         }
     }
 }

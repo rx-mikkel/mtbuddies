@@ -13,6 +13,7 @@ namespace mtbuddies.Models
         public String Author { get; set; }
         public String Comment { get; set; }
         public IList<String> Participants { get; set; }
+        public long TrackId { get; set; }
 
         public RideVM() { }
 
