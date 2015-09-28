@@ -104,6 +104,11 @@
 	    };
 	}]);
 
+	app.controller('HomeController', ['$scope', '$http', function ($scope, $http) {
+	    $scope.aboutText = 'This is about MTBuddies.com More here soon.';
+        $scope.roadMapText = 'This is about our dev. plan. More here soon.'
+	}]);
+
 	app.directive('trackRides', function () {
 		return {
 			restrict: 'E',
@@ -124,6 +129,12 @@
             $routeProvider.when('/Tracks/Track/:trackId', {
                 templateUrl: '/SubViews/Track.html',
                 controller: 'TrackController'
+            }).when('/About', {
+                templateUrl: '/SubViews/About.html',
+                controller: 'HomeController'
+            }).when('/RoadMap', {
+                templateUrl: '/SubViews/roadMap.html',
+                controller: 'HomeController'
             }).when('/', {
                 templateUrl: '/SubViews/TrackOverview.html',
                 controller: 'TrackOverviewController'
