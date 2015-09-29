@@ -15,11 +15,6 @@ namespace DAO
 
         public TracksDB() { }
 
-        public IList<Track> GetAllTracks()
-        {
-            return _context.Tracks.Include("Rides.Participants").ToList();                                              
-        }
-
         public Track GetTrackDetails(long trackId)
         {
             DateTime dateNow = DateTime.Now;

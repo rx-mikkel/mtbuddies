@@ -8,7 +8,5 @@ namespace mtbuddiesSerivce
         Ride AddRide(Ride ride, long trackId);
 
         Boolean AddParticipantToRide(long rideId, Participant participant);
-
-        IList<Ride> GetActiveTrackRides(long trackId);
     }
 }

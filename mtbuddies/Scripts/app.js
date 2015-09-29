@@ -23,7 +23,7 @@
 
             $scope.order = function (predicate, reverse) {
                 $scope.tracks = orderBy($scope.tracks, predicate, reverse);
-            }
+            };
             $scope.order('name', false);
 
         }).error(function () {
@@ -67,7 +67,7 @@
 		        comment: newRide.comment,
 		        participants: [],
 		        trackId: track.id,
-		    }		    
+		    };
 
             $http({
                 method: 'POST',
@@ -104,9 +104,9 @@
 	    };
 	}]);
 
-	app.controller('HomeController', ['$scope', '$http', function ($scope, $http) {
+	app.controller('HomeController', ['$scope', function ($scope) {
 	    $scope.aboutText = 'This is about MTBuddies.com More here soon.';
-        $scope.roadMapText = 'This is about our dev. plan. More here soon.'
+	    $scope.roadMapText = 'This is about our dev. plan. More here soon.';
 	}]);
 
 	app.directive('trackRides', function () {
@@ -138,7 +138,7 @@
             }).when('/', {
                 templateUrl: '/SubViews/TrackOverview.html',
                 controller: 'TrackOverviewController'
-            })
+            });
         }
 	]);
 })();

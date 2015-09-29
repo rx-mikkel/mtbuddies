@@ -12,11 +12,6 @@ namespace mtbuddiesSerivce
     {
         private ITracksDB _tracksDB = new TracksDB();
 
-        public IList<Track> GetAllTracks()
-        {
-            return _tracksDB.GetAllTracks();
-        }
-
         public Track GetTrackDetails(long trackId)
         {
             return _tracksDB.GetTrackDetails(trackId);

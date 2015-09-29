@@ -21,10 +21,5 @@ namespace mtbuddiesSerivce
         {
             return _rideDB.AddParticipantToRide(rideId, participant);
         }
-
-        public IList<Ride> GetActiveTrackRides(long trackId)
-        {
-            return _rideDB.GetActiveTrackRides(trackId);
-        }
     }
 }

@@ -9,7 +9,6 @@ namespace mtbuddiesSerivce
 {
     public interface ITracksService
     {
-        IList<Track> GetAllTracks();
         Track GetTrackDetails(long trackId);
         IList<TrackOverviewDTO> GetTracksOverview();
     }
