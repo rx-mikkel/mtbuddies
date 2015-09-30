@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -7,9 +8,13 @@ namespace mtbuddies.Models
 {
     public class RideVM
     {
+        //TODO convert the date and time to DateTime.
         public long Id { get; set; }
+        [Required]
         public String Date { get; set; }
+        [Required]
         public String Time { get; set; }
+        [Required]
         public String Author { get; set; }
         public String Comment { get; set; }
         public IList<String> Participants { get; set; }

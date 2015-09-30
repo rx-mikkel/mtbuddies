@@ -10,32 +10,56 @@ using System.Web.Mvc;
 
 namespace mtbuddies.Controllers
 {
+    /// <summary>
+    /// Controller handling Rides.
+    /// </summary>
     public class RideController : ApiController
     {
         private IRideService _rideService = new RideService();
-        
+
+        //TODO change this model to it's own.
         public long AddRide([FromBody]RideVM rideVM)
         {
-            var date = DateTime.Parse(rideVM.Date);
-            var time = DateTime.Parse(rideVM.Time);
+            long rideId = -1;
 
-            date = date.AddHours(time.Hour);
-            date = date.AddMinutes(time.Minute);
+            if (ModelState.IsValid)
+            {
+                var date = DateTime.Parse(rideVM.Date);
+                var time = DateTime.Parse(rideVM.Time);
 
-            Ride ride = new Ride() {
-                Author = rideVM.Author,
-                Comment = rideVM.Comment,
-                Date = date,                
-            };
+                date = date.AddHours(time.Hour);
+                date = date.AddMinutes(time.Minute);
 
-            Ride newRide = _rideService.AddRide(ride, rideVM.TrackId);
+                Ride ride = new Ride()
+                {
+                    Author = rideVM.Author,
+                    Comment = rideVM.Comment,
+                    Date = date,
+                };
 
-            return ride.Id;
+                Ride newRide = _rideService.AddRide(ride, rideVM.TrackId);
+                rideId = ride.Id;
+            }
+
+            return rideId;
         }
 
+        /// <summary>
+        /// Adds a participant to a Ride.
+        /// </summary>
+        /// <param name="rideId">Id of the Ride to add the participant.</param>
+        /// <param name="name">Name of the participant.</param>
+        /// <returns>True if the participant is created correctly else false.</returns>
         public bool AddParticipant([FromUri]long rideId, [FromUri]string name)
         {
-            return _rideService.AddParticipantToRide(rideId, new Participant(name));
+            bool result = false;
+            
+            if (rideId != null && rideId != 0 && !String.IsNullOrWhiteSpace(name))
+            {
+                result = _rideService.AddParticipantToRide(rideId, new Participant(name));
+            }
+
+            return result;
         }
     }
 }
