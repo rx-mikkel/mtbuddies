@@ -2,14 +2,27 @@
    Author's custom styles
    ========================================================================== */
 
+html, body {
+  height: 100%;
+}
+
 body {
   font-size: 10px;
   color: $primary-color;
   background-color: $background-color;
-  font-family: $font-stack; }
+  font-family: $font-stack; 
+}
+
+#main {
+  background-color: darken($background-color,12%);
+}
 
 img {
   max-width: 100%;
+}
+
+.page-container {
+  min-height: 100%;
 }
 
 blockquote {
@@ -85,6 +98,10 @@ blockquote {
   }
 }
 
+.textpage, .overview-section {
+  padding: 0px 10px;
+}
+
 .show-mobile {
   display: none;
 }
@@ -110,7 +127,6 @@ blockquote {
 
 .content {
   padding: $spacing 0px;
-  background-color: darken($background-color,12%);
 }
 
 @media screen and (max-width: 619px) {

@@ -12,42 +12,53 @@
 </head>
 
 <body ng-controller="TabController as tab">
-    <div class="header">
-        <div class="wrap">
-            <div class="logo">
-                <a href="#/">
-                    <img alt="mtbuddies" src="~/Content/images/logo.svg" />
-                    <p>MTBuddies</p>
-                </a>
+    <div class="page-container">
+        <div class="header">
+            <div class="wrap">
+                <div class="logo">
+                    <a href="#/">
+                        <img alt="mtbuddies" src="~/Content/images/logo.svg" />
+                        <p>MTBuddies</p>
+                    </a>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div id="main">
-        <div ng-view></div>
-    </div>
+        <div id="main">
+            <div ng-view></div>
+        </div>
 
-    <div class="footer">
-        <div class="wrap group">
-            <div class="column column-left">
+        <div class="footer">
+            <div class="wrap group">
                 <div class="column column-left">
-                    <a href="mailto:kontakt@mtbuddies.com">Kontakt</a><br />
-                    <a href="#/About">Om MTBuddies</a>
+                    <div class="group">
+                        <div class="column column-left">
+                            <a href="mailto:kontakt@mtbuddies.com">Kontakt</a><br />
+                            <a href="#/About">Om MTBuddies</a>
+                        </div>
+                        <div class="column column-right">
+                            <a href="#/RoadMap">Udviklingsplan</a><br />
+                        </div>
+                    </div>
+                    <div class="some-links">
+                        <a href="https://www.facebook.com/ridemtbuddies">
+                            <img src="~/Content/images/facebook-icon.png" alt="facebook link" />
+                        </a>
+                        <a href="https://twitter.com/MTBuddies_dk">
+                            <img src="~/Content/images/twitter-icon.png" alt="twitter link" />
+                        </a>
+                    </div>
                 </div>
                 <div class="column column-right">
-                    <a href="#/RoadMap">Udviklingsplan</a><br />
+                    <div class="logo">
+                        <img src="~/Content/images/logo_bw.svg" />
+                        <p>MTBuddies</p>
+                    </div>
+                    <p>MTBuddies er et fællesskab omkring mountain biking, både lokalt og på kryds af landets regioner. Mød nye venner og lær nye spor at kende.</p>
                 </div>
-            </div>
-            <div class="column column-right">
-                <div class="logo">
-                    <img src="~/Content/images/logo_bw.svg" />
-                    <p>MTBuddies</p>
-                </div>
-                <p>MTBuddies er et fællesskab omkring mountain biking, både lokalt og på kryds af landets regioner. Mød nye venner og lær nye spor at kende.</p>
             </div>
         </div>
     </div>
-    
     @Scripts.Render("~/bundles/apps")
 
     <script type="text/javascript">

@@ -12,6 +12,22 @@
 		opacity: .8;
 	}
 
+	.some-links {
+		padding: $spacing 0px;
+		a {
+			border-bottom: none;
+			margin-right: 10px;
+
+			img {
+				opacity: .8;
+				transition: all ease .4s;
+				&:hover {
+					opacity: 1;
+				}
+			}
+		}
+	}
+
 	.logo {
 		img {
 			height: 48px;

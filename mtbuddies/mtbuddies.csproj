@@ -213,6 +213,7 @@
     <Content Include="Content\images\arrow-left-cw.png" />
     <Content Include="Content\images\arrow-right-ccw.png" />
     <Content Include="Content\images\arrow-right-cw.png" />
+    <Content Include="Content\images\facebook-icon.png" />
     <Content Include="Content\images\hammer-bakker.png" />
     <Content Include="Content\images\kongshoej.jpg" />
     <Content Include="Content\images\kongshoej.png" />
@@ -223,6 +224,7 @@
     <Content Include="Content\images\rold.png" />
     <Content Include="Content\images\track-bg.png" />
     <Content Include="Content\images\track_bg.png" />
+    <Content Include="Content\images\twitter-icon.png" />
     <Content Include="favicon.ico" />
     <Content Include="favicon.png" />
     <Content Include="Global.asax" />

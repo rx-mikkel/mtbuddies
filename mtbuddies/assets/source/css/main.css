@@ -609,6 +609,10 @@ textarea {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
+html, body {
+  height: 100%;
+}
+
 body {
   font-size: 10px;
   color: #444;
@@ -616,8 +620,16 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
+#main {
+  background-color: #e0e0e0;
+}
+
 img {
   max-width: 100%;
+}
+
+.page-container {
+  min-height: 100%;
 }
 
 blockquote {
@@ -691,6 +703,10 @@ blockquote:nth-child(odd) {
   margin-right: 5px;
 }
 
+.textpage, .overview-section {
+  padding: 0px 10px;
+}
+
 .show-mobile {
   display: none;
 }
@@ -717,7 +733,6 @@ blockquote:nth-child(odd) {
 
 .content {
   padding: 20px 0px;
-  background-color: #e0e0e0;
 }
 
 @media screen and (max-width: 619px) {
@@ -907,6 +922,13 @@ textarea {
   width: 100%;
 }
 
+.content ul li {
+  list-style-type: disc;
+  list-style-position: inside;
+  font-size: 1.6em;
+  line-height: 1.4em;
+}
+
 .header {
   background-color: #012e2c;
   color: #fff;
@@ -1061,6 +1083,24 @@ textarea {
 
 .footer a {
   opacity: .8;
+}
+
+.footer .some-links {
+  padding: 20px 0px;
+}
+
+.footer .some-links a {
+  border-bottom: none;
+  margin-right: 10px;
+}
+
+.footer .some-links a img {
+  opacity: .8;
+  transition: all ease 0.4s;
+}
+
+.footer .some-links a img:hover {
+  opacity: 1;
 }
 
 .footer .logo img {

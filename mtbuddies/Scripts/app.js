@@ -1,4 +1,4 @@
-(function () {
+﻿(function () {
     var app = angular.module('mtBuddies', ['ngRoute']);
 
     app.controller('TrackController', ['$scope', '$http', '$routeParams', function ($scope, $http, $routeParams) {        
@@ -105,7 +105,7 @@
 	}]);
 
 	app.controller('HomeController', ['$scope', function ($scope) {
-	    $scope.aboutText = 'This is about MTBuddies.com More here soon.';
+	    $scope.aboutText = 'Her skulle stå lidt om hvem vi er, men vi var ude og cykle den dag :).';
 	    $scope.roadMapText = 'This is about our dev. plan. More here soon.';
 	}]);
 
