@@ -13,6 +13,8 @@ namespace DAO
         public DbSet<Track> Tracks { get; set; }
         public DbSet<Ride> Rides { get; set; }
         public DbSet<Participant> Participants { get; set; }
+        public DbSet<Country> Countries { get; set; }
+        public DbSet<Region> Regions { get; set; }
 
         public CommonDBContext(String connectionString) : base (connectionString)
         {

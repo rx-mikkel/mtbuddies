@@ -102,6 +102,33 @@ namespace DAO.Migrations
             }
 
             #endregion
+
+            #region Adding country Denmark and region Nordjylland
+
+            if (!context.Countries.Any(x => x.Name.Equals("Danmark")))
+            {
+                ICollection<Region> regions = new List<Region>();
+                ICollection<Track> tracks = context.Tracks.ToList();
+
+                Region nordjylland = new Region()
+                {
+                    Name = "Nordjylland",
+                    Tracks = tracks
+                };
+                
+                regions.Add(nordjylland);
+
+                Country denmark = new Country()
+                {
+                    Name = "Danmark",
+                    Regions = regions,
+                };
+
+                context.Countries.Add(denmark);
+                context.SaveChanges();
+            }
+
+            #endregion
         }
     }
 }
