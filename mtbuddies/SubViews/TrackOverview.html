@@ -1,9 +1,9 @@
-﻿<div class="content">
+﻿<div class="content" ng-repeat="region in regions">
     <div class="wrap">
         <div class="overview-section">
             <div class="overview-header">
-                <h2>Nordjylland</h2>
-            </div>            
+                <h2>{{region.name}}</h2>
+            </div>
             <div class="overview-body">
                 <table>
                     <tr>
@@ -12,7 +12,7 @@
                         <th class="align-right"><p ng-click="reverse=!reverse;order('difficulty', reverse)">Sværhed</p></th>
                         <th class="align-right"><p ng-click="reverse=!reverse;order('length', reverse)">Længde</p></th>
                     </tr>
-                    <tr ng-repeat="track in tracks">
+                    <tr ng-repeat="track in region.tracks">
                         <td><a href="#/Tracks/Track/{{track.trackId}}">{{track.name}} <span class="show-mobile"> ({{track.activeRides}})</span></a></td>
                         <td class="align-right hide-mobile"><p>{{track.activeRides}}</p></td>
                         <td class="align-right"><p>{{track.difficulty}}</p></td>

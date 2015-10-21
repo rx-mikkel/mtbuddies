@@ -11,6 +11,6 @@ namespace DAO
     public interface ITracksDB
     {
         Track GetTrackDetails(long trackId);
-        IList<TrackOverviewDTO> GetTracksOverview();
+        IList<RegionDTO> GetTracksOverview();
     }
 }

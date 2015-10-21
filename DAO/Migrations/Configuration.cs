@@ -129,6 +129,24 @@ namespace DAO.Migrations
             }
 
             #endregion
+
+            #region Adding region Sjælland
+
+            if (!context.Regions.Any(x => x.Name.Equals("Sjælland")))
+            {
+                Region sjælland = new Region()
+                {
+                    Name = "Sjælland"
+                };
+
+                Country danmark = context.Countries.Include(x => x.Regions).SingleOrDefault(x => x.Name.Equals("Danmark"));
+                
+                danmark.Regions.Add(sjælland);
+
+                context.SaveChanges();
+            }
+
+            #endregion
         }
     }
 }

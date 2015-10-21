@@ -10,6 +10,6 @@ namespace mtbuddiesSerivce
     public interface ITracksService
     {
         Track GetTrackDetails(long trackId);
-        IList<TrackOverviewDTO> GetTracksOverview();
+        IList<RegionDTO> GetTracksOverview();
     }
 }

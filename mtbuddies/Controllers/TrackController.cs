@@ -24,11 +24,11 @@ namespace mtbuddies.Controllers
             return trackVM;
         }
 
-        public IList<TrackOverviewDTO> GetTracksOverview()
+        public IList<RegionDTO> GetTracksOverview()
         {
-            IList<TrackOverviewDTO> tracks = _trackService.GetTracksOverview();
+            IList<RegionDTO> regions = _trackService.GetTracksOverview();
 
-            return tracks;
+            return regions;
         }        
     }
 }

@@ -24,19 +24,25 @@ namespace DAO
             return track;
         }
 
-        public IList<TrackOverviewDTO> GetTracksOverview()
+        public IList<RegionDTO> GetTracksOverview()
         {
             DateTime nowDate = DateTime.Now;
-            IList<TrackOverviewDTO> tracks = _context.Tracks.Select(x =>
-                new TrackOverviewDTO() {
-                    TrackId = x.Id, 
-                    Name = x.Name, 
-                    ActiveRides = x.Rides.Count(r => r.Date >= nowDate),
-                    Difficulty = x.Difficulty, 
-                    Length = x.Length
+            
+            IList<RegionDTO> regions = _context.Regions.Select(x =>
+                new RegionDTO()
+                {
+                    Name = x.Name,
+                    Tracks = x.Tracks.Select(t => new TrackOverviewDTO()
+                    {
+                        TrackId = t.Id,
+                        Name = t.Name,
+                        ActiveRides = t.Rides.Count(r => r.Date >= nowDate),
+                        Difficulty = t.Difficulty,
+                        Length = t.Length
+                    }).ToList()
                 }).ToList();
 
-            return tracks;
+            return regions;
         }
     }
 }

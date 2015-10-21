@@ -17,12 +17,12 @@
 	}]);
 
     app.controller('TrackOverviewController', ['$scope', '$filter', '$http', function ($scope, $filter, $http) {
-        $http.get('api/Track/GetTracksOverview').success(function (data) {
+        $http.get('api/Track/GetTracksOverview').success(function (regions) {
             var orderBy = $filter('orderBy');
-            $scope.tracks = data;
+            $scope.regions = regions;
 
             $scope.order = function (predicate, reverse) {
-                $scope.tracks = orderBy($scope.tracks, predicate, reverse);
+                $scope.regions.tracks = orderBy($scope.regions.tracks, predicate, reverse);
             };
             $scope.order('name', false);
 

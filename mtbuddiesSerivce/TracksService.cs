@@ -17,7 +17,7 @@ namespace mtbuddiesSerivce
             return _tracksDB.GetTrackDetails(trackId);
         }
 
-        public IList<TrackOverviewDTO> GetTracksOverview()
+        public IList<RegionDTO> GetTracksOverview()
         {
             return _tracksDB.GetTracksOverview();
         }
