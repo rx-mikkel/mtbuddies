@@ -22,10 +22,12 @@
             $scope.regions = regions;
 
             $scope.order = function (predicate, reverse) {
-                $scope.regions.tracks = orderBy($scope.regions.tracks, predicate, reverse);
+                for (var i = 0; i < $scope.regions.length; i++) {
+                    $scope.regions[i].tracks = orderBy($scope.regions[i].tracks, predicate, reverse);
+                }
             };
             $scope.order('name', false);
-
+            
         }).error(function () {
             //TODO Handle errors
         });
