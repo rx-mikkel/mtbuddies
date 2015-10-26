@@ -11,5 +11,7 @@ namespace mtbuddiesSerivce
     {
         Track GetTrackDetails(long trackId);
         IList<RegionDTO> GetTracksOverview();
+        void CreateTrack(long regionId, Track track);
+        Dictionary<long, String> GetRegions();
     }
 }

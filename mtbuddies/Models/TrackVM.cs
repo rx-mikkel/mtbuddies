@@ -19,6 +19,8 @@ namespace mtbuddies.Models
         public string Direction { get; set; }
         public IList<RideVM> Rides { get; set; }
 
+        public TrackVM() { }
+
         public TrackVM(DomainModels.Track track)
         {
             this.Id = track.Id;

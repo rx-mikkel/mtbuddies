@@ -44,5 +44,17 @@ namespace DAO
 
             return regions;
         }
+
+        public void CreateTrack(long regionId, Track track)
+        {
+            Region region = _context.Regions.Include(x => x.Tracks).SingleOrDefault(x => x.Id == regionId);
+            region.Tracks.Add(track);
+            _context.SaveChanges();
+        }
+
+        public Dictionary<long, String> GetRegions()
+        {
+            return _context.Regions.ToDictionary(x => x.Id, x => x.Name);
+        }
     }
 }

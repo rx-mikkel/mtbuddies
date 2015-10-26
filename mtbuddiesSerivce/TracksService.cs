@@ -21,5 +21,15 @@ namespace mtbuddiesSerivce
         {
             return _tracksDB.GetTracksOverview();
         }
+
+        public void CreateTrack(long regionId, Track track)
+        {
+            _tracksDB.CreateTrack(regionId, track);
+        }
+
+        public Dictionary<long, string> GetRegions() 
+        {
+            return _tracksDB.GetRegions();
+        }
     }
 }
